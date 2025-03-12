@@ -1,0 +1,39 @@
+.header{
+    width: 95%;
+    height: 40px;
+    background-color: white;
+    box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.221);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.search{
+    width: 60%;
+    height: 80%;
+    /* background-color: aquamarine; */
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+.search input{
+    border: 0;
+}
+.controls{
+    width: 30%;
+    height: 100%;
+    /* background-color: burlywood; */
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: end;
+}
+.controls i{
+    font-size: 21px;
+}
+
+.adminPic{
+    border-radius: 50%;
+    width: 40px;
+    height: 90%;
+}

@@ -1,5 +1,6 @@
 import React from 'react'
 import './SideNav.css'
+import FFlogo from '../../assets/FF3.png'
 import { Link } from 'react-router-dom';
 import { CiGrid42 } from "react-icons/ci";
 import { HiOutlineChartBar } from "react-icons/hi2";
@@ -9,6 +10,7 @@ const SideNav = () => {
   return (
     <div className='sideNav'>
         <div className="sideNavLogo">
+            <img src={FFlogo} alt="" className='FFlogo'/>
             <h3>Future Fund</h3>
         </div>
 

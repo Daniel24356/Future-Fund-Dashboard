@@ -9,9 +9,9 @@ const Layout = () => {
     <>
       <SideNav/>
       <Routes>
-        <Route path="/Users" element={< Users/>} />
-        <Route path="/Users" element={< Users/>} />
-        <Route path="/Users" element={< Users/>} />
+        <Route path="/Users" element={<Users/>} />
+        <Route path="/Users" element={<Users/>} />
+        <Route path="/Users" element={<Users/>} />
       </Routes>
     </>
   );
