@@ -1,0 +1,92 @@
+.searchmain{
+    width: 99%;
+    height: 60px;
+    /* border: 1px solid black;
+     */
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+    margin-top: 20px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-content: space-between;
+}
+.searchinput{
+    width: 80%;
+    height: 50px;
+    padding: 0 10px;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    font-weight: 500;
+}
+.searchdiv{
+    width: 40%;
+    height: 50px;
+    /* border: 1px solid black; */
+    margin-left: 20px;
+    display: flex;
+    align-items: center;
+    font-size: 23px;
+}
+
+.searchdiv1{
+    width: 30%;
+    height: 50px;
+    /* border: 1px solid black; */
+    display: flex;
+    align-items: center;
+    font-size: 23px;
+    justify-content: center;
+    gap: 8%;
+}
+
+.flag{
+    width: 50px;
+    height: 50px;
+    /* border: 1px solid black; */
+}
+
+.moon{
+    width: 40px;
+    height: 40px;
+    /* border: 1px solid black; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.flag1{
+    width: 30px;
+    height: 30px;
+    /* border: 1px solid black; */
+}
+.flag1 img{
+    width: 100%;
+    height: 100%;
+}
+
+.flag2{
+    width: 50px;
+    height: 45px;
+    /* border: 1px solid black; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.flag3{
+    width: 50px;
+    height: 50px;
+    /* border: 1px solid black; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.profilepic{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
