@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import { CiGrid42 } from "react-icons/ci";
 import { HiOutlineChartBar } from "react-icons/hi2";
 import { PiUsersThree } from "react-icons/pi";
+import { IoSettingsOutline, IoExitOutline } from "react-icons/io5";
 
 const SideNav = () => {
   return (
@@ -15,22 +16,31 @@ const SideNav = () => {
         </div>
 
         <div className="sideNavLinks">
-
-            <div className="links">
-                <i><CiGrid42 /></i>
-                <Link to='Users'>Dashboard</Link>
-            </div>
             
-            <div className="links">
+            <Link to='Users' className='links'>
+                <i><CiGrid42 /></i>
+                <p>Dashboard</p>
+            </Link>
+            
+            <Link to='Analytics' className="links">
                 <i><HiOutlineChartBar /></i>
-                <Link to='Users'>Analytics</Link>
-            </div>
+                <p>Analytics</p>
+            </Link>
 
-            <div className="links">
+            <Link to='Users' className="links">
                 <i><PiUsersThree /></i>
-                <Link to='Users'>Users</Link>
-            </div>
+                <p>Users</p>
+            </Link>
 
+            <Link to='Users' className="links">
+                <i><IoSettingsOutline /></i>
+                <p>Settings</p>
+            </Link>
+
+            <Link to='Users' className="links">
+                <i><IoExitOutline /></i>
+                <p>LogOut</p>
+            </Link>           
         </div>
     </div>
   )

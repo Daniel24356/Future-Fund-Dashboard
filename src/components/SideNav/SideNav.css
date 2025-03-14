@@ -30,26 +30,35 @@
     /* background-color: red; */
 }
 .links{
-    width: 92%;
+    /* background-color: #2b14dd3d; */
+    width: 94%;
     height: 50px;
     display: flex;
     align-items: center;
     gap: 10px;
     padding-left: 10px;
-}
-.links a{
-    color: black;
     text-decoration: none;
+}
+.links p{
+    color: rgb(152, 152, 152);
+    text-decoration: none;
+    margin: 0;
+}
+.links i{
+    font-weight: 300;
+    font-size: 24px;
+    color: rgb(152, 152, 152);
+    margin: 0;
 }
 
 .links:hover{
-    background-color: #2C14DD;
-    color: white;
-    border-radius: 10px;
+    background-color: #2b14dd3d;
+    color: #2C14DD;
+    /* border-radius: 10px; */
     transition: 1s;
 }
-.links:hover a, .links:hover i{
-    color: white;
+.links:hover p, .links:hover i{
+    color: #2C14DD;
 }
 
 .FFlogo{

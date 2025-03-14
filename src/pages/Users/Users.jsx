@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Header from '../../components/Header/Header';
 import './Users.css';
-import { FaPlus } from "react-icons/fa";
+// import { FaPlus } from "react-icons/fa";
 import { GoTrash } from "react-icons/go";
 import { CiEdit } from "react-icons/ci";
 import { PiDotsThreeOutlineVerticalFill } from "react-icons/pi";
@@ -9,6 +9,7 @@ import { LuScreenShare } from "react-icons/lu";
 import { FiUserCheck, FiUserPlus, FiUser } from "react-icons/fi";
 import { TbUserExclamation } from "react-icons/tb";
 import Dropdown from '../../components/Dropdown/Dropdown';
+import Button from '../../components/Button';
 import anya from '../../assets/anya.jpg'
 import Adam from '../../assets/Adam.jpg'
 import chibi from '../../assets/chibi.jpg'
@@ -174,10 +175,16 @@ const Users = () => {
               </select>
             </div>
 
-            <button className='addUserBtn'>
+            {/* <button className='addUserBtn'>
               <i><FaPlus /></i>
               Add New User
-            </button>
+            </button> */}
+            <Button
+                btnName="Add New User"
+                // width="70%"
+                borderRadius="5px"
+                padding="10px"
+            />
           </div>
           
         </div>

@@ -53,7 +53,7 @@
     /* border: 1px solid black; */
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-evenly;
 }
 
 
@@ -100,8 +100,9 @@
     height: 600px;
     display: flex;
     flex-direction: column;
+    box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.221);
     /* gap: 10px; */
-    /* border-radius: 5px !important; */
+    border-radius: 5px !important;
 }
 .filter{
     border-top-left-radius: 5px;
@@ -140,13 +141,12 @@
     padding-right: 20px;
 }
 
-.addUserBtn{
+/* .addUserBtn{
     padding: 10px;
     border: 0;
     background-color: #2C14DD;
     color: white;
     border-radius: 5px;
-    /* height: 40px; */
     display: flex;
     gap: 5px;
     cursor: pointer;
@@ -154,7 +154,7 @@
 .addUserBtn:hover{
     background-color: #180892;
     transition: 1s;
-}
+} */
 
 .exportBox{
     /* background-color: coral; */
@@ -432,32 +432,32 @@
     background-color: #e8f5e9;
   }
   
-  .userListStatus.active:hover {
+  /* .userListStatus.active:hover {
     background-color: #4CAF50;
     color: #ffffff;
-  }
+  } */
   
-  /* Pending Status */
+ 
   .userListStatus.pending {
-    color: #FFC107;
+    color: #ffb300;
     background-color: #fff3cd;
   }
   
-  .userListStatus.pending:hover {
+  /* .userListStatus.pending:hover {
     background-color: #FFC107;
     color: #ffffff;
-  }
+  } */
   
-  /* Inactive Status */
+  
   .userListStatus.inactive {
-    color: #F44336;
-    background-color: #ffebee;
+    color: #646464;
+    background-color: #bebebe;
   }
   
-  .userListStatus.inactive:hover {
-    background-color: #F44336;
+  /* .userListStatus.inactive:hover {
+    background-color: #363636;
     color: #ffffff;
-  }
+  } */
 
 .userListStatus{
     width: 80px;
@@ -472,14 +472,7 @@
     cursor: pointer;
     border-radius: 10px;
 }
-.userListStatus:hover{
-    background-color: #3c7b3fd9;
-    transition: 1s;
-}
-.userListStatus:hover p{
-    color: white;
-    transition: 1s; 
-}
+
 
 .userListActions{
     /* background-color: palevioletred; */

@@ -1,11 +1,12 @@
 .header{
     width: 95%;
-    height: 40px;
+    height: 50px;
     background-color: white;
-    box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.221);
+    box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.221); 
     display: flex;
     align-items: center;
     justify-content: space-around;
+    border-radius: 5px;
 }
 
 .search{
@@ -18,7 +19,10 @@
 }
 .search input{
     border: 0;
+    height: 60%;
+    width: 300px;
 }
+
 .controls{
     width: 30%;
     height: 100%;
@@ -30,10 +34,35 @@
 }
 .controls i{
     font-size: 21px;
+    margin-top: 5px;
 }
 
 .adminPic{
     border-radius: 50%;
     width: 40px;
-    height: 90%;
+    height: 80%;
+    /* border: 1px solid black; */
+}
+.online{
+    position: absolute;
+    top: 44px;
+    right: 50px;
+    background-color: green;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 2px solid white;
+    z-index: 6;
+}
+
+.moon{
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background-color: aqua; */
 }

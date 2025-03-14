@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './Dropdown.css';
 
-const Dropdown = ({ options, index }) => {
+const Dropdown = ({ options, index, width, height }) => {
   const [selectedOption, setSelectedOption] = useState('');
 
   const handleChange = (event) => {
@@ -10,7 +10,14 @@ const Dropdown = ({ options, index }) => {
 
   return (
     <div>
-      <select value={selectedOption} onChange={handleChange}>
+      <select 
+        value={selectedOption} 
+        onChange={handleChange}
+        style={{
+          width: width,
+          height: height
+        }}
+      >
         <option value="" disabled>
           {options[index]?.optionTitle || 'Select an option'}
         </option>
