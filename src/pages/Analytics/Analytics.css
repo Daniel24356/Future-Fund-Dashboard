@@ -1,6 +1,8 @@
 .analytics{
     background-color: #2b14dd09;
-    width: 1080px;
+    /* background-color: black; */
+    width: 1064px;
+    /* width: 100%; */
     height: 230vh;
     display: flex;
     flex-direction: column;

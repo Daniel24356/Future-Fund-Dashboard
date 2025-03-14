@@ -1,15 +1,28 @@
 .sideNav{
-    /* background-color: black; */
     box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.13);
     width: 200px;
+    /* width: 21%; */
     height: 100vh;
     position: sticky;
     top: 0;
     left: 0;
     display: flex;
     flex-direction: column;
-    /* gap: 30px; */
+    justify-content: space-around;
+    /* overflow-y: auto; */
 }
+/* .sideNav {
+    width: 250px;
+    height: 100vh;
+    background-color: #1e1e2f;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 20px;
+    color: #fff;
+    overflow-y: auto;
+  } */
+  
 
 .sideNavLogo{
     width: 100%;
@@ -20,14 +33,23 @@
     /* background-color: red; */
 }
 
-.sideNavLinks{
+.sideNavLinks1{
     width: 100%;
-    height: 70%;
+    height: 50%;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 10px;
-    /* background-color: red; */
+    /* background-color: rgb(0, 255, 76); */
+}
+.sideNavLinks2{
+    width: 100%;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    /* background-color: rgb(255, 0, 179); */
 }
 .links{
     /* background-color: #2b14dd3d; */
@@ -65,4 +87,38 @@
     width: 70px;
     height:60%;
     border-radius: 10%;
+}
+
+
+.custom-confirm-btn {
+  background-color: #28a745;
+  color: #ffffff;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 6px;
+  font-size: 16px;
+  transition: background-color 0.2s ease;
+}
+
+.custom-confirm-btn:hover {
+  background-color: #218838;
+}
+
+.custom-cancel-btn {
+  background-color: #dc3545;
+  color: #ffffff;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 6px;
+  font-size: 16px;
+  margin-right: 10px;
+  transition: background-color 0.2s ease;
+}
+
+.custom-cancel-btn:hover {
+  background-color: #c82333;
+}
+
+.custom-popup {
+  border-radius: 12px;
 }
