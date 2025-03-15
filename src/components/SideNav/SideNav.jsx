@@ -29,8 +29,8 @@ const SideNav = () => {
         text: 'You will be logged out!',
         icon: 'warning',
         showCancelButton: true,
-        confirmButtonText: 'Yes, log out!',
-        cancelButtonText: 'No, cancel!',
+        confirmButtonText: 'Yes, log out',
+        cancelButtonText: 'No, cancel',
         reverseButtons: true,
       })
       .then((result) => {
@@ -58,7 +58,7 @@ const SideNav = () => {
       </div>
 
       <div className='sideNavLinks1'>
-        <Link to='' className='links'>
+        <Link to='/Dashboard/Homepage' className='links'>
           <i><CiGrid42 /></i>
           <p>Dashboard</p>
         </Link>

@@ -40,6 +40,7 @@
 
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import SideNav from "./components/SideNav/SideNav";
+import Homepage from './pages/Homepage/Homepage'
 import Users from "./pages/Users/Users";
 import Analytics from "./pages/Analytics/Analytics";
 import Settings from "./pages/Settings/Settings";
@@ -50,6 +51,7 @@ const DashboardLayout = () => (
     <SideNav />
     <div>
       <Routes>
+        <Route path="/Homepage" element={<Homepage />} />
         <Route path="/Users" element={<Users />} />
         <Route path="/Analytics" element={<Analytics />} />
         <Route path="/Settings" element={<Settings />} />

@@ -20,28 +20,28 @@ const Analytics = () => {
   const [statsData] = useState([
     {
       "statIcon": <FiUsers/>,
-      "statValue": "8.549K",
+      "statValue": "8.549k",
       "statName": "Customers",
       color: ' #6221f3',
       bgColor: '#6221f31c'
     },
     {
       "statIcon": <LiaPiggyBankSolid />,
-      "statValue": "230K",
+      "statValue": "230k",
       "statName": "Contributions",
       color:'#36f4db',
       bgColor:'rgba(54, 244, 206, 0.18)'
     },
     {
       "statIcon": <TbMoneybag />,
-      "statValue": "1.423K",
+      "statValue": "1.423k",
       "statName": "Loans",
       color: '#F44336',
       bgColor: '#f443361f'
     },
     {
       "statIcon": <FiDollarSign />,
-      "statValue": "₦500K",
+      "statValue": "₦500k",
       "statName": "Revenue",
       color: '#4CAF50',
       bgColor: '#4caf5026'
@@ -170,12 +170,12 @@ const Analytics = () => {
           <div className="highestBorrowerTxtBox">
 
             <div className="highestBorrowerTxt" id='highestBorrowerTxt1'>
-              <p><b>Congratulations Williams <span style={{fontSize: "23px"}}>🎉</span></b></p>
+              <p><b>Congratulations Adrian <span style={{fontSize: "23px"}}>🎉</span></b></p>
               <p>Top Borrower of the month</p>
             </div>
 
             <div className="highestBorrowerTxt" id='highestBorrowerTxt2'>
-              <p className='highestBorrowerAmount'><b>₦500.2K</b></p>
+              <p className='highestBorrowerAmount'><b>₦500.2k</b></p>
               {/* <button className='loanHistoryBtn'>
                 View Loan History
               </button> */}
@@ -217,7 +217,7 @@ const Analytics = () => {
         
         <div className="semiCircularBar">
           <p className='loanAmount'>
-            <b>82.5K</b>
+            <b>82.5k</b>
             <br />
             Loans
           </p>
@@ -263,7 +263,7 @@ const Analytics = () => {
         <div className="sourceVisits">
           <div className="sourceHead">
             <p><b>Source Visits</b></p>
-            <p style={{color: "rgb(108, 108, 108)"}}>38.4K Visitors</p>
+            <p style={{color: "rgb(108, 108, 108)"}}>38.4k Visitors</p>
           </div>
           
           <div className="sourceBody">

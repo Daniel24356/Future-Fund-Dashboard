@@ -7,8 +7,9 @@
     justify-content: center;
 }
 .loginBox2{
-  background-color: #2b14dd09;
+  background-color: #2b14dd98;
     /* background-color: #2b14dd09; */
+    /* background-color: #2C14DD; */
     width: 60%;
     height: 70%;
     display: flex;
@@ -52,12 +53,19 @@
 }
 
   .username label, .password label {
-    color: #151717;
+    /* color: #151717; */
+    color: white;
+    font-weight: 600;
+  }
+
+  .username i, .password i {
+    /* color: #151717; */
+    color: white;
     font-weight: 600;
   }
   
   .inputForm {
-    border: 1.5px solid #bdbdbd;
+    border-bottom: 1.5px solid #ffffff;
     border-radius: 10px;
     height: 50px;
     display: flex;
@@ -72,7 +80,11 @@
   border: none;
   width: 85%;
   height: 100%;
-  background-color: transparent;
+  background-color: transparent !important;
+  color: white !important;
+}
+.loginInput::placeholder{
+  color: white;
 }
   
   .loginInput:focus {
@@ -80,7 +92,7 @@
   }
   
   .inputForm:focus-within {
-    border: 1.5px solid #2C14DD;
+    border-bottom: 1.5px solid #2C14DD;
   }
   
   .forgotPass {
