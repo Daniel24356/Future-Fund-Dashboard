@@ -21,7 +21,7 @@ const TotalEarnings = () => {
   return (
     <div className="card">
       <h3 className="h3">Total Earning</h3>
-      <p className="percentage">87% <span className="positive2">+25.8%</span></p>
+      <p className="percentage">87% <span className="positive">+25.8%</span></p>
       
       <ResponsiveContainer width="100%" height={250}>
       <BarChart 
@@ -54,7 +54,7 @@ const TotalEarnings = () => {
       </BarChart>
     </ResponsiveContainer>
 
-      <div className="stats2">
+      <div className="stats">
         <div className="stat-item">
           <div className="total-E">
             <div className="double-icon">
@@ -65,7 +65,7 @@ const TotalEarnings = () => {
           <p className="name">Refund</p>
           </span>
           </div>
-          <span className="positive2">+ $98</span>
+          <span className="positive">+ $98</span>
         </div>
 
         <div className="stat-item">
@@ -78,7 +78,7 @@ const TotalEarnings = () => {
           <p className="name">Client Payment</p>
           </span>
           </div>
-          <span className="positive2">+ $126</span>
+          <span className="positive">+ $126</span>
         </div>
        
       </div>

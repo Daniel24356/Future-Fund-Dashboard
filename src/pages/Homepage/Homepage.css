@@ -1,3 +1,4 @@
+
 /* .main{
     width: 1064px;
     height: 700px;
@@ -161,6 +162,110 @@
     /* border: 1px solid gray; */
     box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, 0.2221);
     border-radius: 5px;
+.main{
+    width: 80%;
+    height: 700px;
+    /* border: 1px solid black; */
+    margin-left: 280px;
+    /* background-color: #f8f8ff; */
+    overflow: scroll;
+    overflow-x: none;
+}
+.advert{
+    width: 99%;
+    height: 270px;
+    /* border: 1px solid black; */
+    margin-top: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3%;
+}
+
+.advert-box{
+    width: 50%;
+    height: 250px;
+    /* border: 1px solid black; */
+    background-image: url(/src/assets/IMAGE/1.png);
+    background-size: cover;
+    background-position: center;
+    border-radius: 5px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+}
+
+
+
+.advert-box-details{
+    width: 63%;
+    height: 220px;
+    /* border: 1px solid black; */
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.website_info{
+    width: 100%;
+    height: 50px;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.website_info1{
+    width: 100%;
+    height: 50px;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding-top: 17px;
+}
+
+.website_info p{
+    padding-top: 7px;
+    font-size: 14px;
+}
+
+.session{
+    width: 120%;
+    height: 100px;
+    /* border:1px solid white; */
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3%;
+}
+
+.session-details{
+    width: 40%;
+    height: 40px;
+    /* border: 1px solid white; */
+    display: flex;
+    align-items: center;
+    gap:3%;
+}
+
+.num{
+    width: 60px;
+    height: 35px;
+    /* border:1px solid white; */
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.119);
+    gap: 5%
+}
+
+.sales-overview{
+    width: 50%;
+    height: 250px;
+    /* border: 1px solid gray; */
+    box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, 0.2221);
+    border-radius: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -172,10 +277,9 @@
     width: 100%;
     height: 50px;
     /* border: 1px solid black; */
-    /* background-color: paleturquoise; */
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
     gap: 30%;
 }
 
@@ -185,9 +289,8 @@
 }
 
 .sales2{
-    /* height: 50px; */
+    height: 50px;
     font-size: 16px;
-    /* border: 1px solid black; */
     color: rgb(44, 145, 44);
     font-weight: bold;
     display: flex;
@@ -207,6 +310,12 @@
 .loanVsContribution{
     width: 100%;
     /* height: 130px; */
+    gap: 9%;
+}
+
+.revenue-generate{
+    width: 100%;
+    height: 130px;
     /* border: 1px solid black;   */
     display: flex;
     flex-direction: column;
@@ -284,6 +393,52 @@
 }
 
 
+.order-visit{
+    width: 100%;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+
+.visit{
+    width: 96%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-content: space-between;
+}
+
+.gapin{
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10%;
+}
+
+
+.revenue-generate span{
+    font-size: 15px;
+    color: gray;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+}
+
+.revenue{
+    width: 50%;
+    height: 250px;
+    box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, 0.2221);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
 .advert-box1{
     width: 50%;
     height: 280px;
@@ -295,6 +450,30 @@
     padding: 5px;
 }
 
+.vs-report{
+    width: 100%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8%;
+}
+
+.vs-report span{
+    width: 60%;
+    height: 50px;
+    /* border: 1px solid black; */
+    display: flex;
+    gap: 3%;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.vs-report h3{
+    color: black;
+}
+
 .progress-bar {
     width: 250px;
     height: 10px; /* Adjust height as needed */
@@ -304,14 +483,13 @@
 }
 
 @keyframes progress-animation {
-  from {
-    width: 0%;
+    from {
+      width: 0%;
+    }
+    to {
+      width: 90%;
+    }
   }
-  to {
-    width: 90%;
-  }
-}
-
 
 .progress{
     width: 100%;
@@ -412,6 +590,27 @@
   }
   .warraper{
     width: 90%;
+
+  .dashboard {
+    display: flex;
+    align-items: center;
+    height: 450px;
+    gap: 25px;
+    /* border: 1px solid black; */
+    margin-top: 15px;
+  }
+  
+  .card1 {
+    width: 45%;
+    height: 400px;
+    background: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, 0.2221);
+  }
+  
+  .warraper{
+    width: 100%;
     height: 230px;
     display: flex;
     align-items: center;
@@ -444,6 +643,7 @@
     font-size: 14px;
     margin: 0;
     /* padding-top: 10px; */
+    padding-top: 10px;
   }
   
   .amount {
@@ -478,7 +678,6 @@
 
   }
   
-  
   .metrics {
     display: flex;
     justify-content: space-between;
@@ -501,10 +700,39 @@
     /* background-color: palegoldenrod; */
     align-items: center;
     justify-content: center;
+    }
+  .metrics {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    width: 45%;
+    height:380px;
+    /* border: 1px solid black; */
+    margin-left: 20px;
+  }
+  .metrics1 {
+    display: flex;
+    justify-content: space-between;
+    gap: 2%;
+    width: 100%;
+    height: 100px;
+    border: 1px solid gray;
+    border-radius: 5px;
+    padding: 5px;
+    padding-top: 10px;
+    padding-left: 9px;
+    margin-top: 17px;
+  }
+  
+  .metric {
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+    text-align: start;
     /* padding-left: 10px; */
     /* border: 1px solid black; */
   }
-  
+
 .metricName{
   /* background-color: rgba(255, 0, 0, 0.41); */
   width: 100%;
@@ -562,6 +790,16 @@
 
   
   .profit2 {
+  .icon2 {
+    display: block;
+    width: 24px;
+    height: 24px;
+    margin: 0 auto 5px;
+  }
+  
+
+  
+  .profit {
     width: 100%;
     height: 40px;
     /* border: 1px solid black; */
@@ -637,9 +875,53 @@
     margin: 0;
   }
 
+  .price-tag{
+    width: 100%;
+    height: 100px;
+    /* border: 1px solid black; */
+    display: flex;
+    flex-direction: column;
+    gap: 15%;
+  }
   
+  .price-tag h4{
+    font-size: 30px;
+  }
+  .progress-span {
+    width: 160px; /* Adjust width as needed */
+    height: 5px; /* Adjust height as needed */
+    border-radius: 10px;
+    background: linear-gradient(to right, red 20%, red 20%, #E0E0E0 20%);
+}
 
 
+.progress-span-profit {
+    width: 160px; /* Adjust width as needed */
+    height: 5px; /* Adjust height as needed */
+    border-radius: 10px;
+    background: linear-gradient(to right, #1ebc89 60%, #1ebc89 60%, #E0E0E0 60%);
+}
+
+.progress-span-earnings {
+    width: 160px; /* Adjust width as needed */
+    height: 5px; /* Adjust height as needed */
+    border-radius: 10px;
+    background: linear-gradient(to right, #6957DA 80%, #6957DA 80%, #E0E0E0 80%);
+}
+
+
+.card23{
+    width: 45%;
+    height: 400px;
+    background: #fff;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5%;
+    padding: 20px;
+    box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, 0.2221);
+  }
 
   .title-header{
     line-height: 1;
@@ -690,9 +972,6 @@
     justify-content: center;
   }
 
-
-
-
 .support {
   grid-row: 2;
     grid-column: 3;
@@ -717,7 +996,12 @@
   grid-row: 2;
 }
 
-
+  .dashboard2 {
+    display: flex;
+    gap: 25px;
+    /* border: 1px solid black; */
+    margin-top: 20px;
+  }
 
 .Source-content{
   width: 100%;
@@ -756,12 +1040,6 @@
   flex-direction: column;
   align-items: start;
 }
-
-
-
-
-
-
 
 /* SOURCE VISITS */
 .sourceVisits2{
@@ -835,6 +1113,11 @@
   margin: auto;
   background: white;
   /* padding: 20px; */
+.transactions-container {
+  width: 65%;
+  margin: auto;
+  background: white;
+  padding: 20px;
   border-radius: 12px;
   box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, 0.2221);
 }
@@ -851,6 +1134,17 @@
 }
 
 .transactionsHead input {
+.h2 {
+  margin-bottom: 10px;
+}
+
+.search-bar {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 10px;
+}
+
+.search-bar input {
   padding: 8px;
   width: 200px;
   border: 1px solid #ddd;
@@ -886,12 +1180,13 @@ th, td {
 }
 
 .status {
-  padding: 5px;
-  border-radius: 5px;
   font-weight: bold;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 5px 10px;
+  border-radius: 15px;
+  font-weight: bold;
 }
 
 .status.pending {
@@ -903,8 +1198,8 @@ th, td {
   color: red;
   background-color: rgba(255, 0, 0, 0.242);
 }
-
-.status.approved {
+  
+.status.done {
   color: #1ebc89;
   background-color: rgba(0, 128, 0, 0.167);
 }

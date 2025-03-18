@@ -1,4 +1,5 @@
 
+
 // import { BrowserRouter as Router, Routes, Route, Navigate, useLocation} from "react-router-dom";
 // import SideNav from "./components/SideNav/SideNav";
 // // import Header from "./components/Header/Header";
@@ -60,6 +61,7 @@ const DashboardLayout = () => (
   </div>
 );
 
+
 const AppRouter = () => {
   return (
     <Router>
@@ -71,6 +73,8 @@ const AppRouter = () => {
         {/* Wrap dashboard routes with the DashboardLayout */}
         <Route path="/Dashboard/*" element={<DashboardLayout />} />
       </Routes>
+      <Layout /> {/* Ensure Layout is inside Router */}
+
     </Router>
   );
 };

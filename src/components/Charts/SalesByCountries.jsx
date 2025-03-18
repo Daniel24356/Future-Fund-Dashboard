@@ -1,11 +1,11 @@
 import React from "react";
 import { FaAngleDown, FaAngleUp  } from "react-icons/fa";
-import usaFlag from "../../assets/Flag_of_the_United_States.svg.png";
-import nigeriaFlag from "../../assets/Flag_of_Nigeria.svg.png";
-import indiaFlag from "../../assets/Flag_of_India.svg.webp";
-import australiaFlag from "../../assets/Flag-Australia.webp";
-import franceFlag from "../../assets/Flag_of_France.svg.png";
-import chinaFlag from "../../assets/China_flage.jpg";
+import usaFlag from "../../assets/IMAGE/Flag_of_the_United_States.svg.png";
+import nigeriaFlag from "../../assets/IMAGE/Flag_of_Nigeria.svg.png";
+import indiaFlag from "../../assets/IMAGE/Flag_of_India.svg.webp";
+import australiaFlag from "../../assets/IMAGE/Flag-Australia.webp";
+import franceFlag from "../../assets/IMAGE/Flag_of_France.svg.png";
+import chinaFlag from "../../assets/IMAGE/China_flage.jpg";
 import "./ChartStyles.css";
 
 const countryData = [
@@ -29,7 +29,8 @@ const SalesByCountries = () => {
             <p className="amount02">{country.amount}</p>
             <p className="name">{country.name}</p>
           </div>
-          <span className={country.isPositive ? "positive2" : "negative2"}>
+          <span className={country.isPositive ? "positive" : "negative"}>
+
           {country.isPositive ? <FaAngleUp  className="icon-up" /> : <FaAngleDown  className="icon-down" />}
             {country.change}
           </span>
