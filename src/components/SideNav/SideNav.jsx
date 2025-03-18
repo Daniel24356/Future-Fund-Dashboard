@@ -66,7 +66,7 @@ const Sidebar = () => {
         </li>
         <li>
           <FaUsers className="icon" />
-          <span>Users</span>
+          <Link to='Users'> <span>Users</span></Link>
         </li>
         <li>
           <FaShoppingCart className="icon" />
@@ -89,7 +89,7 @@ const Sidebar = () => {
           <FaCalendar className="icon" />
           <span>Calendar</span>
         </li>
-        <li onClick=(handleLogout)>
+        <li onClick={handleLogout}>
           <FaFileInvoice className="icon" />
           <span>LogOut</span>
         </li>

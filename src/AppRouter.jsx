@@ -73,7 +73,7 @@ const AppRouter = () => {
         {/* Wrap dashboard routes with the DashboardLayout */}
         <Route path="/Dashboard/*" element={<DashboardLayout />} />
       </Routes>
-      <Layout /> {/* Ensure Layout is inside Router */}
+      {/* <DashboardLayout /> */}
 
     </Router>
   );

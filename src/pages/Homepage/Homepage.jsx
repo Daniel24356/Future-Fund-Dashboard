@@ -11,7 +11,6 @@ import { IoIosLink } from "react-icons/io";
 import { Line } from "react-chartjs-2";
 import { Chart as ChartJS, LineElement, CategoryScale, LinearScale, PointElement } from "chart.js";
 import { CiCreditCard1 } from "react-icons/ci";
-import React, { useEffect, useState } from "react";
 ChartJS.register(LineElement, CategoryScale, LinearScale, PointElement);
 import { Bar, Doughnut } from "react-chartjs-2";
 import { RiPaypalLine } from "react-icons/ri";
@@ -29,9 +28,6 @@ import { BsExclamationTriangle } from "react-icons/bs";
 import { TiSocialAtCircular } from "react-icons/ti";
 import { GrMicrophone } from "react-icons/gr";
 import { GiMoneyStack } from "react-icons/gi";
-import { MdOutlineMail } from "react-icons/md";
-import { IoOpenOutline } from "react-icons/io5";
-import { CiBadgeDollar } from "react-icons/ci";
 import anya from '../../assets/anya.jpg'
 import Adam from '../../assets/Adam.jpg'
 import chibi from '../../assets/chibi.jpg'
@@ -134,6 +130,9 @@ const metrics = [
 ]
 
 const Homepage = () => {
+  [
+  {
+    id: 2,
     name: "Adrian Daren",
     type: "Bonus",
     status: "Done",
@@ -160,8 +159,6 @@ const Homepage = () => {
     img: "https://randomuser.me/api/portraits/men/44.jpg",
   }
 ];
-
-function Homepage() {
   
   const data = {
     labels: ["", "", "", "", "", ""], 
@@ -233,6 +230,7 @@ function Homepage() {
 
 
   return (
+    <>
     <div className='homepage'>
       <Header/>
 
@@ -613,7 +611,7 @@ function Homepage() {
           <div className="chart-container3">
             <ProgressChart progress={85} />
           </div>
-        </div> */}
+        </div> 
 
           
         {/* </div> */}
@@ -702,11 +700,8 @@ function Homepage() {
 
 
       </div>
-    </div>
-  )
-}
-
-export default Homepage;
+    {/* </div> */}
+  
 
         </div>
 
@@ -860,13 +855,14 @@ export default Homepage;
                 <button className="details-btn">Details</button>
               </td>
             </tr>
-          ))}
+          ))}``
         </tbody>
       </table>
     </div>
 
     </div>
     </div>
+    </>
   )  
 }
 
