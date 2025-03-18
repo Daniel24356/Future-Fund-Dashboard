@@ -1,0 +1,487 @@
+.users{
+    background-color: #2b14dd09;
+    width: 1064px;
+    height: 200vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 10px;
+    gap: 30px;
+    position: relative;
+}
+
+.breadcrumbs{
+    width: 95%;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    /* background-color: orangered; */
+}
+
+.breadcrumbs p{
+    color: rgb(108, 108, 108);
+}
+
+.activeCrumb{
+    color: black;
+}
+
+
+/* SUMMARY SECTION */
+.userSummary{
+    width: 95%;
+    height: 100px;
+    /* background-color: rgb(0, 98, 255); */
+    display: flex;
+    gap: 15px;
+}
+
+.summaryInfo{
+    width: 25%;
+    height: 100%;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.221);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.summaryInfoTxt{
+    width: 50%;
+    height: 80%;
+    /* border: 1px solid black; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+
+.summaryIcon{
+    width: 20%;
+    /* border: 1px solid black; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.summaryIcon i{
+    font-size: 24px;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.increase{
+    color: rgb(13, 200, 13);
+}
+
+.userSummaryTitle{
+    color: rgb(108, 108, 108);
+    font-size: 13px;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.userSummaryValue{
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.positive{
+    color: green;
+}
+.negative{
+    color: red;
+}
+
+
+/* USER BODY SECTION */
+.userBody{
+    background-color: white;
+    width: 95%;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.221);
+    /* gap: 10px; */
+    border-radius: 5px !important;
+}
+.filter{
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    background-color: white;
+    height: 90px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.searchFilter{
+    width: 80%;
+    /* height: 20%; */
+    padding-left: 20px;
+    /* background-color: rgb(80, 162, 255); */
+}
+.filterOptions{
+    width: 100%;
+    height: 80%;
+    /* background-color: coral; */
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.filter2{
+    border-top: 1px solid #e3e3e3;
+    border-bottom: 1px solid #e3e3e3;
+    background-color: white;
+    height: 80px;
+    width: 96%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+/* .addUserBtn{
+    padding: 10px;
+    border: 0;
+    background-color: #2C14DD;
+    color: white;
+    border-radius: 5px;
+    display: flex;
+    gap: 5px;
+    cursor: pointer;
+}
+.addUserBtn:hover{
+    background-color: #180892;
+    transition: 1s;
+} */
+
+.exportBox{
+    /* background-color: coral; */
+    display: flex;
+    width: 300px;
+    justify-content: space-between;
+}
+.export{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    border: 1px solid #ccc;
+    padding: 8px 14px;
+    border-radius: 5px;
+    height: 20px;
+    width: 100px;
+    cursor: pointer;
+    background-color: #e3e3e3;
+}
+.exportIcon{
+    font-size: 20px;
+    color: #555
+}
+.exportDropdown{
+    border: none;
+    outline: none;
+    background-color: transparent;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+
+.userRow{
+    /* background-color: #180892; */
+    width: 100%;
+    display: grid;
+    grid-template-columns: 2fr 2fr 2fr 2fr 2fr 2fr 2fr; /* 3 columns: First two are equal, third is smaller */
+    grid-template-rows: 1fr; /* 3 equal rows */
+}
+/* LIST OF USERS */
+.usersList{
+   width: 100%;
+   height: 500px;
+   display: flex;
+   flex-direction: column;
+   gap: 10px;
+    /* background-color: #2b14dd42; */
+    
+}
+.userListHead{
+    display: grid;
+    /* grid-template-columns: 2fr 2fr 2fr 2fr 2fr 2fr 2fr;
+    grid-template-rows: 1fr;  */
+    grid-template-columns: repeat(7, 1fr);
+    height: 10%;
+    align-items: center;
+    border-bottom: 1px solid #e3e3e3;
+}
+
+.firstHeadItem {
+    grid-column: 1 / span 2;
+    grid-row: 1;
+    padding-left: 10px;
+}
+
+/* USER COLUMN */
+.user{
+    grid-column: 1 / span 2;
+    grid-row: 1;
+    /* background-color: violet; */
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.userHead{
+    height: 10%;
+    border-bottom: 1px solid #e3e3e3;
+    display: flex;
+    align-items: center;
+}
+.userInfo{
+    width: 100%;
+    height: 70px;
+    /* background-color: rgb(0, 166, 255); */
+    grid-column: 1 / span 2;
+    grid-row: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    /* gap: 5px; */
+}
+.name{
+    width: 70%;
+    height: 60px;
+    gap: 5px;
+    /* background-color: red; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.userImg{
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+}
+.nameTxt{
+    height: 100%;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    /* background-color: rgb(255, 0, 238); */
+}
+.username{
+    margin: 0;
+}
+.userEmail{
+    font-size: 14px;
+    color: #555;
+    margin: 0;
+}
+
+
+/* ROLE COLUMN */
+.role{
+    grid-column: 3;
+    grid-row: 1;
+    /* background-color: rgb(130, 238, 143); */
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.roleHead{
+    height: 10%;
+    border-bottom: 1px solid #e3e3e3;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+}
+.roleInfo, .titleInfo, .billingInfo, .statusInfo, .actionsInfo{
+    width: 90%;
+    height: 70px;
+    /* background-color: rgb(0, 166, 255); */
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    /* padding-left: 6px; */
+}
+
+
+/* TITLE COLUMN */
+.title{
+    grid-column: 4;
+    grid-row: 1;
+    /* background-color: rgb(207, 130, 238); */
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.titleHead{
+    height: 10%;
+    border-bottom: 1px solid #e3e3e3;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+}
+
+
+/* BILLING COLUMN */
+.billing{
+    grid-column: 5;
+    grid-row: 1;
+    /* background-color: rgb(130, 238, 234); */
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.billingHead{
+    height: 10%;
+    border-bottom: 1px solid #e3e3e3;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+}
+
+/* STATUS COLUMN */
+.status{
+    grid-column: 6;
+    grid-row: 1;
+    /* background-color: rgb(238, 130, 130); */
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.statusHead{
+    height: 10%;
+    border-bottom: 1px solid #e3e3e3;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+}
+
+/* ACTIONS COLUMN */
+.actions{
+    grid-column: 7;
+    grid-row: 1;
+    /* background-color: rgb(238, 234, 130); */
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.actionsHead{
+    height: 10%;
+    border-bottom: 1px solid #e3e3e3;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+}
+
+
+
+.usersListBox{
+    width: 100%;
+    height: 80px;
+    display: grid;
+    grid-template-columns: 2fr 2fr 2fr 2fr 2fr 2fr; /* 3 columns: First two are equal, third is smaller */
+    grid-template-rows: 1fr 1fr 1fr; /* 3 equal rows */
+    /* gap: 10px; */
+    /* background-color: coral; */
+    border-top: 1px solid #e3e3e3;
+    border-bottom: 1px solid #e3e3e3;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.userRole{
+    grid-column: 2;
+    grid-row: 1;
+    /* background-color: rgb(186, 238, 130); */
+    height: 100%;
+    display: flex;
+    align-items: center;
+    width: 100px;
+}
+
+.userListTitle{
+    grid-column: 3;
+    grid-row: 1;
+}
+
+.userListBilling{
+    grid-column: 4;
+    grid-row: 1;
+}
+
+/* .userListStatus.active {
+    color: #4CAF50;
+    background-color: #a6ffa9;
+  }
+  
+  .userListStatus.pending {
+    color: #FFC107;
+    background-color: #ffefbb;
+  }
+  
+  .userListStatus.inactive {
+    color: #F44336;
+    background-color: #ffd0d7;
+  } */
+
+  .userListStatus.active {
+    color: #4CAF50;
+    background-color: #e8f5e9;
+  }
+  
+  /* .userListStatus.active:hover {
+    background-color: #4CAF50;
+    color: #ffffff;
+  } */
+  
+ 
+  .userListStatus.pending {
+    color: #ffb300;
+    background-color: #fff3cd;
+  }
+  
+  /* .userListStatus.pending:hover {
+    background-color: #FFC107;
+    color: #ffffff;
+  } */
+  
+  
+  .userListStatus.inactive {
+    color: #646464;
+    background-color: #bebebe;
+  }
+  
+  /* .userListStatus.inactive:hover {
+    background-color: #363636;
+    color: #ffffff;
+  } */
+
+.userListStatus{
+    width: 80px;
+    height: 50%;
+    /* background-color: #4caf5026; */
+    grid-column: 5;
+    grid-row: 1;
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+
+.userListActions{
+    /* background-color: palevioletred; */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.userListActions i{
+    font-size: 20px;
+}

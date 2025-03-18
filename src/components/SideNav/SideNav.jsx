@@ -1,4 +1,5 @@
-import {Link} from 'react-router-dom'
+
+import {Link, useNavigate} from 'react-router-dom'
 import './SideNav.css'
 import React, { useState } from "react"; 
 import { FaUsers, FaShoppingCart, FaCalendar, FaFileInvoice, FaCog } from "react-icons/fa";
@@ -7,6 +8,45 @@ import Homepage from '../../pages/Homepage/Homepage'
 
 const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(true);
+  
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    const swalWithBootstrapButtons = Swal.mixin({
+      customClass: {
+        confirmButton: 'custom-confirm-btn', // Custom style
+        cancelButton: 'custom-cancel-btn', // Custom style
+        popup: 'custom-popup',
+      },
+      buttonsStyling: false,
+    });
+
+    swalWithBootstrapButtons
+      .fire({
+        title: 'Are you sure?',
+        text: 'You will be logged out!',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonText: 'Yes, log out',
+        cancelButtonText: 'No, cancel',
+        reverseButtons: true,
+      })
+      .then((result) => {
+        if (result.isConfirmed) {
+          swalWithBootstrapButtons.fire({
+            title: 'Logged Out!',
+            text: 'You have been logged out.',
+            icon: 'success',
+            confirmButtonText: 'OK', // Style OK button separately
+          });
+
+          // Redirect to login page after logging out
+          setTimeout(() => {
+            navigate('/Login');
+          }, 1500);
+        }
+      });
+  };
 
   return (
     <div className={`sidebar ${isOpen ? "open" : "closed"}`}>
@@ -49,9 +89,9 @@ const Sidebar = () => {
           <FaCalendar className="icon" />
           <span>Calendar</span>
         </li>
-        <li>
+        <li onClick=(handleLogout)>
           <FaFileInvoice className="icon" />
-          <span>Invoice</span>
+          <span>LogOut</span>
         </li>
         <li>
           <FaCog className="icon" />

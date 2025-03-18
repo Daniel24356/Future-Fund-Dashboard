@@ -30,6 +30,7 @@ const SalesByCountries = () => {
             <p className="name">{country.name}</p>
           </div>
           <span className={country.isPositive ? "positive" : "negative"}>
+
           {country.isPositive ? <FaAngleUp  className="icon-up" /> : <FaAngleDown  className="icon-down" />}
             {country.change}
           </span>

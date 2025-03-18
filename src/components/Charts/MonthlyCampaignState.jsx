@@ -31,6 +31,7 @@ const MonthlyCampaignState = () => {
           </span>
           <p className="value">{item.value}</p>
           <span className={item.isPositive ? "positive" : "negative"}>
+
             {item.change}
           </span>
         </div>

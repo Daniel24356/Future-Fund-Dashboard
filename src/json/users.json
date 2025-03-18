@@ -1,0 +1,30 @@
+[
+    {
+      "userImg": "anya.jpg",
+      "username": "Anya Forger",
+      "userEmail": "anyaforger@gmail.com",
+      "roleInfo": "Admin",
+      "titleInfo": "Electricity",
+      "billingInfo": "Auto-Debit",
+      "statusInfo": "Active"
+    },
+    {
+      "userImg": "Adam.jpg",
+      "username": "Adam Smasher",
+      "userEmail": "whiteadam@gmail.com",
+      "roleInfo": "User",
+      "titleInfo": "Data",
+      "billingInfo": "Paypal",
+      "statusInfo": "Pending"
+    },
+    {
+      "userImg": "chibi.jpg",
+      "username": "Zoe Woods",
+      "userEmail": "zoeDchibi@gmail.com",
+      "roleInfo": "User",
+      "titleInfo": "Bet account",
+      "billingInfo": "ApplePay",
+      "statusInfo": "Inactive"
+    }
+]
+  
