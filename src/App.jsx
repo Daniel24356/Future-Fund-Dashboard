@@ -1,17 +1,15 @@
-
-import { useState } from 'react'
-import './App.css'
-import AppRouter from './AppRouter'
+import { ThemeProvider } from './context/ThemeContext';
+import './App.css';
+import AppRouter from './AppRouter';
 
 function App() {
-  
   return (
-    <>
+    <ThemeProvider>
       <div className="app">
-        <AppRouter/>
+        <AppRouter />
       </div>
-    </>
-  )
+    </ThemeProvider>
+  );
 }
 
-export default App
+export default App;

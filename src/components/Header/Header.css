@@ -1,7 +1,7 @@
 .header{
     width: 95%;
     height: 50px;
-    background-color: white;
+    background-color: var(--background-color-elements);
     box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.221); 
     display: flex;
     align-items: center;
@@ -19,8 +19,11 @@
 }
 .search input{
     border: 0;
+    outline: none;
     height: 60%;
     width: 300px;
+    border-radius: 5px;
+    padding-left: 10px;
 }
 
 .controls{

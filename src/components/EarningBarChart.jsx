@@ -202,7 +202,7 @@ const EarningBarChart = () => {
         <Tooltip content={<CustomTooltip />} />
         <Bar
           dataKey="Total"
-          fill="#2C14DD"
+          fill="#8879ff"
           radius={[5, 5, 0, 0]} // Rounded top corners
           barSize={40}
         />

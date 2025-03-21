@@ -1,9 +1,9 @@
 .analytics{
-    background-color: #2b14dd09;
+    background-color: var(--background-color-pages);
     /* background-color: black; */
     width: 1064px;
     /* width: 100%; */
-    height: 230vh;
+    height: 240vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -28,11 +28,18 @@
     border-radius: 5px;
     box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.221);
     /* height: 150px; */
-    background-color: white;
+    background-color: var(--background-color-elements);
     grid-column: 1;
     grid-row: 1;
     display: flex;
     align-items: center;
+}
+.borrower{
+    color: gray;
+    font-size: 13px;
+}
+.congrats{
+    color: var(--background-color-grayTxts);
 }
 .highestBorrowerTxtBox{
     /* background-color: pink; */
@@ -46,7 +53,7 @@
     justify-content: space-around;
 }
 .highestBorrowerTxt{
-    /* border: 1px solid black; */
+    /* border: 1px solid white; */
     width: 90%;
     display: flex;
     flex-direction: column;
@@ -56,7 +63,7 @@
 }
 #highestBorrowerTxt1{
     height: 30%;
-    font-size: 13px;
+    
 }
 #highestBorrowerTxt2{
     height: 50%; 
@@ -64,7 +71,7 @@
 }
 .highestBorrowerAmount{
     font-size: 20px;
-    color: #2C14DD;
+    color: var(--icon-color);
     
 }
 .highestBorrowerImg{
@@ -100,7 +107,7 @@
 .stats{
     grid-column: 2 / span 2;
     grid-row: 1;
-    background-color: white;
+    background-color: var(--background-color-elements);
     /* width: 500px; */
     /* height: 150px; */
     border-radius: 5px;
@@ -117,12 +124,15 @@
     align-items: center;
     /* background-color: pink; */
 }
+.statsHeadTitle{
+    color: var(--background-color-grayTxts);
+}
 .statsHead p{
     margin-top: 0;
     margin-bottom: 0;
 }
 .update{
-    color: rgb(108, 108, 108);
+    color: gray;
     font-size: 13px;
 }
 .statsBody{
@@ -161,7 +171,7 @@
     align-items: center;
 }
 .statName{
-    color: rgb(108, 108, 108);
+    color: gray;
     font-size: 13px;
     margin-top: 0;
     margin-bottom: 0;
@@ -169,6 +179,7 @@
 .statValue{
     margin-top: 0;
     margin-bottom: 0;
+    color: var(--background-color-grayTxts);
 }
 
 
@@ -177,7 +188,7 @@
 .semiCircularBar{
     grid-column: 1;
     grid-row: 2 ;
-    background-color: white;
+    background-color: var(--background-color-elements);
     /* width: 500px; */
     /* height: 300px; */
     border-radius: 5px;
@@ -186,20 +197,30 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    padding-top: 10px;
 }
-.loanAmount{
+.loanAmount1{
     text-align: start;
+    color: var(--background-color-grayTxts);
+    /* border: 1px solid black; */
+    height: 40px;
+    width: 80%;
+}
+.loanAmount2{
+    text-align: start;
+    display: flex;
+    align-items: center;
+    color: var(--background-color-grayTxts);
     /* border: 1px solid black; */
     height: 40px;
     width: 80%;
 }
 
 
-
 .profit{
     grid-column: 2;
     grid-row: 2 ;
-    background-color: white;
+    background-color: var(--background-color-elements);
     border-radius: 5px;
     box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.221);
     display: flex;
@@ -210,16 +231,22 @@
 }
 .profitTxt{
     width: 90%;
-    /* margin-left: 50px; */
     text-align: start;
+    color: var(--background-color-grayTxts);
     /* border: 1px solid black; */
+}
+.profitTxt, h3, p{
+    margin: 0;
 }
 .profitSummary{
     width: 60%;
-    height: 40px;
+    /* height: 30px; */
     display: flex;
     justify-content: space-between;
     /* background-color: palegoldenrod; */
+}
+.profitSummaryValue{
+    color: var(--background-color-grayTxts);
 }
 
 
@@ -228,7 +255,7 @@
 .earningReports{
     grid-column: 1/ span 2;
     grid-row: 3 / span 2;
-    background-color: white;
+    background-color: var(--background-color-elements);
     border-radius: 5px;
     box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.221);
     display: flex;
@@ -260,6 +287,9 @@
     align-items: center;
     gap: 10px;
 }
+.earningName{
+    color: var(--background-color-grayTxts);
+}
 .earningReportsIcon{
     border: 1.3px dashed rgb(108, 108, 108);
     width: 14%;
@@ -283,14 +313,135 @@
     font-size: 13px;
 }
 .earningReportsIcon:hover{
-    border: 1px solid #2C14DD;
+    border: 1px solid #8879ff;
     transition: 0.7s;
 }
 .earningReportsIcon:hover i{
-    color: #2C14DD;
-    background-color: #2b14dd1a;
+    background-color: var(--iconBg-color);
+    color: var(--icon-color);
     transition: 0.7s;
 }
+
+
+
+
+
+
+/* SOURCE VISITS */
+.sourceVisits{
+    grid-column: 3;
+    grid-row: 2 / span 2;
+    background-color: var(--background-color-elements);
+    border-radius: 5px;
+    box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.221);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    gap: 20px;
+    /* justify-content: space-evenly; */
+}
+.sourceHead{
+    width: 90%;
+    /* background-color: burlywood; */
+}
+.sourceHead p{
+    margin: 0;
+}
+.sourceBody{
+    width: 90%;
+    /* background-color: #180892; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+.source{
+    width: 100%;
+    /* background-color: #8b9208; */
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 10px;
+    height: 20%;
+}
+.sourceTxt{
+    width: 50%;
+    height: 90%;
+    /* background-color: palevioletred; */
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    /* justify-content: space-between; */
+    gap: 10px;
+}
+.sourceTxt p {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.sourceIcon{
+    padding: 10px;
+    border-radius: 5px;
+    background-color: rgb(223, 223, 223);
+    color: rgb(108, 108, 108);
+}
+
+
+
+
+/* INVOICE STATES */
+.invoiceStates{
+    grid-column: 3;
+    grid-row: 4;
+    background-color: var(--background-color-elements);
+    border-radius: 5px;
+    box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.221);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    height: 300px;
+}
+.invoiceStateHead{
+    width: 90%;
+    /* background-color: burlywood; */
+}
+.invoiceStateHead p{
+    margin: 0;
+}
+.invoiceStateBody{
+    width: 90%;
+    height: 50%;
+    /* background-color: #180892; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+.invoiceState{
+    width: 100%;
+    /* background-color: #8b9208; */
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 10px;
+    height: 33%;
+}
+.invoiceState p {
+    margin: 0;
+}
+.invoiceStateIcon{
+    padding: 10px;
+    border-radius: 5px;
+    background-color: rgb(223, 223, 223);
+    color: rgb(108, 108, 108);
+}
+.invoiceAmount{
+    color: var(--background-color-grayTxts);
+}
+
+
 
 
 
@@ -299,26 +450,26 @@
 .invoice{
     grid-column: 1 / span 3;
     grid-row: 5;
-    background-color: white;
+    background-color: var(--background-color-elements);
     border-radius: 5px;
     box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.221);
     display: flex;
     flex-direction: column;
     align-items: center;
     /* justify-content: center; */
-    height: 400px;
+    height: 430px;
 }
 .invoiceFilter{
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
-    /* background-color: black; */
+    /* background-color: var(--background-color-elements); */
     height: 70px;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-around;
     gap: 10px;
-    border-bottom: 1px solid #e3e3e3;
+    /* border-bottom: 1px solid #e3e3e3; */
 }
 .invoiceFilter1, .invoiceFilter2{
     /* background-color: black; */
@@ -326,7 +477,7 @@
     width: 40%;
     display: flex;
     align-items: center;
-    border-bottom: 1px solid #e3e3e3;
+    /* border-bottom: 1px solid #e3e3e3; */
     gap: 20px;
 }
 .invoiceFilter1{
@@ -386,119 +537,102 @@
     border-radius: 5px;
 }
 
-
-
-
-
-
-
-/* SOURCE VISITS */
-.sourceVisits{
-    grid-column: 3;
-    grid-row: 2 / span 2;
-    background-color: white;
-    border-radius: 5px;
-    box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.221);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-bottom: 10px;
-    padding-top: 10px;
-    gap: 20px;
-    /* justify-content: space-evenly; */
-}
-.sourceHead{
-    width: 90%;
-    /* background-color: burlywood; */
-}
-.sourceHead p{
-    margin: 0;
-}
-.sourceBody{
-    width: 90%;
-    /* background-color: #180892; */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-}
-.source{
+.invoiceContainer {
+    grid-column: 1 / span 3;
     width: 100%;
-    /* background-color: #8b9208; */
+    grid-row: 3;
+    margin: auto;
+    /* background-color: #2C14DD; */
+    /* background-color: var(--background-color-elements); */
+    /* padding: 20px; */
+  }
+  
+  .invoiceHead{
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    justify-content: space-evenly;
-    gap: 10px;
-    height: 20%;
-}
-.sourceTxt{
-    width: 50%;
-    height: 90%;
-    /* background-color: palevioletred; */
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    /* justify-content: space-between; */
-    gap: 10px;
-}
-.sourceTxt p {
-    margin-top: 0;
-    margin-bottom: 0;
-}
-.sourceIcon{
-    padding: 10px;
+    /* margin-bottom: 10px; */
+    height: 50px;
+    padding-left: 20px;
+    padding-right: 20px;
+    /* background-color: #1ebc89; */
+  }
+  
+  .invoiceHead input {
+    padding: 8px;
+    width: 200px;
+    border: 1px solid #ddd;
     border-radius: 5px;
-    background-color: rgb(223, 223, 223);
-    color: rgb(108, 108, 108);
-}
-
-
-
-
-/* TRANSACTIONS */
-.transactions{
-    grid-column: 3;
-    grid-row: 4;
-    background-color: white;
-    border-radius: 5px;
-    box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.221);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-    height: 300px;
-}
-.transactionHead{
-    width: 90%;
-    /* background-color: burlywood; */
-}
-.transactionHead p{
-    margin: 0;
-}
-.transactionBody{
-    width: 90%;
-    height: 50%;
-    /* background-color: #180892; */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-}
-.transaction{
+    height: 10px;
+  }
+  
+  table {
     width: 100%;
-    /* background-color: #8b9208; */
+    border-collapse: collapse;
+  }
+  
+  thead {
+    /* background-color: #f8f9fa; */
+    background-color: transparent;
+    text-align: left;
+  }
+  
+  th, td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .receiver {
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
     gap: 10px;
-    height: 33%;
-}
-.transaction p {
-    margin: 0;
-}
-.transactionIcon{
-    padding: 10px;
+  }
+  
+  .receiver img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+  }
+  
+  .status {
+    padding: 5px;
+    width: 70px;
     border-radius: 5px;
-    background-color: rgb(223, 223, 223);
-    color: rgb(108, 108, 108);
-}
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+  }
+  
+  .status.pending {
+    background: #fdf1e0;
+    color: #e3a24b;
+  }
+  
+  /* .status.notissued {
+    color: red;
+    background-color: rgba(255, 0, 0, 0.242);
+  }
+   */
+  .status.issued {
+    color: #1ebc89;
+    background-color: rgba(0, 128, 0, 0.167);
+  }
+  
+  .amount11 {
+    font-weight: bold;
+  }
+  
+  .details-btn {
+    padding: 5px 10px;
+    border: 1px solid #ddd;
+    background: #f8f9fa;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .details-btn:hover {
+    background: #ddd;
+  }
+  

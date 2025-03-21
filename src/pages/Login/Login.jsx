@@ -6,13 +6,14 @@ import 'react-toastify/dist/ReactToastify.css';
 import { useNavigate } from 'react-router-dom';
 import { IoKeySharp } from "react-icons/io5";
 import { FaUserSecret } from "react-icons/fa";
+import formLogo from '../../assets/FF3.png'
 
 const Login = () => {
   const navigate = useNavigate();
 
   // Define the correct username and password
   const ADMIN_USERNAME = "admin";
-  const ADMIN_PASSWORD = "futurefund123";
+  const ADMIN_PASSWORD = "futurefund";
 
   // State to store input values
   const [username, setUsername] = useState("");
@@ -51,6 +52,10 @@ const Login = () => {
 
         <form className="userLoginForm" onSubmit={handleSignIn}>
           {/* Username Field */}
+          <div className="formLogoBox">
+            <img src={formLogo} alt="" className='formLogo'/>  
+          </div>
+          
           <div className="username">
             <label>Admin Username</label>
             <div className="inputForm">

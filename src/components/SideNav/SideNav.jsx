@@ -1,14 +1,16 @@
 
-import {Link, useNavigate} from 'react-router-dom'
-import './SideNav.css'
-import React, { useState } from "react"; 
-import { FaUsers, FaShoppingCart, FaCalendar, FaFileInvoice, FaCog } from "react-icons/fa";
-import { RiHome6Line } from "react-icons/ri";
-import Homepage from '../../pages/Homepage/Homepage'
 
-const Sidebar = () => {
-  const [isOpen, setIsOpen] = useState(true);
-  
+import React from 'react';
+import './SideNav.css';
+import FFlogo from '../../assets/FF3.png';
+import { Link, useNavigate } from 'react-router-dom';
+import { CiGrid42 } from 'react-icons/ci';
+import { HiOutlineChartBar } from 'react-icons/hi2';
+import { PiUsersThree } from 'react-icons/pi';
+import { IoSettingsOutline, IoExitOutline } from 'react-icons/io5';
+import Swal from 'sweetalert2';
+
+const SideNav = () => {
   const navigate = useNavigate();
 
   const handleLogout = () => {
@@ -49,57 +51,42 @@ const Sidebar = () => {
   };
 
   return (
-    <div className={`sidebar ${isOpen ? "open" : "closed"}`}>
-      <div className="sidebar-header">
-        <h2 className="logo">FutureFund</h2>
-        <button className="toggle-btn" 
-        // onClick={() => setIsOpen(!isOpen)}
-        >
-          ☰
-        </button>
+    <div className='sideNav'>
+      <div className='sideNavLogo'>
+        <img src={FFlogo} alt='' className='FFlogo' />
+        <h3>Future Fund</h3>
       </div>
-      <ul className="sidebar-menu">
-       <li className="active">
-        <RiHome6Line className='icon' />
-        <Link to='Homepage' className="active"> <span>Dashboard</span></Link>
-          
-        </li>
-        <li>
-          <FaUsers className="icon" />
-          <Link to='Users'> <span>Users</span></Link>
-        </li>
-        <li>
-          <FaShoppingCart className="icon" />
-          <span>eCommerce</span>
-        </li>
-        <li>
-          <FaCalendar className="icon" />
-          <span>Calendar</span>
-        </li>
-        <li>
-          <FaFileInvoice className="icon" />
-          <span>Invoice</span>
-        </li>
-        <li>
-          <FaCog className="icon" />
-          <span>Settings</span>
-        </li>
 
-        <li>
-          <FaCalendar className="icon" />
-          <span>Calendar</span>
-        </li>
-        <li onClick={handleLogout}>
-          <FaFileInvoice className="icon" />
-          <span>LogOut</span>
-        </li>
-        <li>
-          <FaCog className="icon" />
-          <span>Settings</span>
-        </li>
-      </ul>
+      <div className='sideNavLinks1'>
+        <Link to='/Dashboard/Homepage' className='links'>
+          <i><CiGrid42 /></i>
+          <p>Dashboard</p>
+        </Link>
+
+        <Link to='/Dashboard/Analytics' className='links'>
+          <i><HiOutlineChartBar /></i>
+          <p>Analytics</p>
+        </Link>
+
+        <Link to='/Dashboard/Users' className='links'>
+          <i><PiUsersThree /></i>
+          <p>Users</p>
+        </Link>
+      </div>
+
+      <div className='sideNavLinks2'>
+        <Link to='/Dashboard/Settings' className='links'>
+          <i><IoSettingsOutline /></i>
+          <p>Settings</p>
+        </Link>
+
+        <div className='links' onClick={handleLogout}>
+          <i><IoExitOutline /></i>
+          <p>LogOut</p>
+        </div>
+      </div>
     </div>
   );
 };
 
-export default Sidebar;
+export default SideNav;

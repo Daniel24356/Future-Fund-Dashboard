@@ -10,7 +10,7 @@ const Button = ({ btnName, width, height, borderRadius, padding }) => {
         height: height,
         borderRadius: borderRadius,
         padding: padding,
-        backgroundColor: hover ? '#180892' : '#2C14DD', // Change color on hover
+        backgroundColor: hover ? 'var(--btnHover-bgColor)' : 'var(--icon-color)', // Change color on hover
         color: 'white',
         border: 'none',
         transition: 'background-color 1s', // Smooth transition

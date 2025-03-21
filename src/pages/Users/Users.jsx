@@ -1,19 +1,19 @@
-
 import React, { useState } from 'react';
 import Header from '../../components/Header/Header';
 import './Users.css';
 // import { FaPlus } from "react-icons/fa";
 import { GoTrash } from "react-icons/go";
 import { CiEdit } from "react-icons/ci";
-import { PiDotsThreeOutlineVerticalFill } from "react-icons/pi";
+// import { PiDotsThreeOutlineVerticalFill } from "react-icons/pi";
 import { LuScreenShare } from "react-icons/lu";
-import { FiUserCheck, FiUserPlus, FiUser } from "react-icons/fi";
+import { FiUserCheck, FiUserPlus, FiUser, FiSave } from "react-icons/fi";
 import { TbUserExclamation } from "react-icons/tb";
 import Dropdown from '../../components/Dropdown/Dropdown';
 import Button from '../../components/Button';
 import anya from '../../assets/anya.jpg'
 import Adam from '../../assets/Adam.jpg'
 import chibi from '../../assets/chibi.jpg'
+import adrian from '../../assets/ai-avatar.webp'
 
 const Users = () => {
 
@@ -54,7 +54,7 @@ const Users = () => {
       bgColor: '#4caf5026'
     },
     {
-      title: 'Pending Users',
+      title: 'Inactive Users',
       amount: 237,
       increaseDecreaseSpan: " (+42%)",
       title2: 'Last week analytics',
@@ -65,35 +65,44 @@ const Users = () => {
   ]);
 
 
-  const userListHead = ['USER', 'ROLE', 'TITLE', 'BILLING', 'STATUS', 'ACTIONS'];
+  // const userListHead = ['USER', 'ROLE', 'TITLE', 'BILLING', 'STATUS', 'ACTIONS'];
 
   const [userData] = useState([
     {
+      "userId": 1,
       "userImg": anya,
       "username": "Anya Forger",
       "userEmail": "anyaforger@gmail.com",
-      "roleInfo": "Admin",
-      "titleInfo": "Electricity",
-      "billingInfo": "Auto-Debit",
-      "statusInfo": "Active"
+      "userRole": "Admin",
+      "userBilling": "Auto-Debit",
+      "userStatus": "Active"
     },
     {
+      "userId": 2,
       "userImg": Adam,
       "username": "Adam Smasher",
       "userEmail": "whiteadam@gmail.com",
-      "roleInfo": "User",
-      "titleInfo": "Data",
-      "billingInfo": "Paypal",
-      "statusInfo": "Pending"
+      "userRole": "User",
+      "userBilling": "Paypal",
+      "userStatus": "Inactive"
     },
     {
+      "userId": 3,
       "userImg": chibi,
       "username": "Zoe Woods",
       "userEmail": "zoeDchibi@gmail.com",
-      "roleInfo": "User",
-      "titleInfo": "Bet account",
-      "billingInfo": "ApplePay",
-      "statusInfo": "Inactive"
+      "userRole": "User",
+      "userBilling": "ApplePay",
+      "userStatus": "Inactive"
+    },
+    {
+      "userId": 4,
+      "userImg": adrian,
+      "username": "Adrian Xavier",
+      "userEmail": "adrianXavier@gmail.com",
+      "userRole": "User",
+      "userBilling": "Auto-Debit",
+      "userStatus": "Active"
     }
   ])
 
@@ -108,11 +117,11 @@ const Users = () => {
     },
     {
       optionTitle: 'Select Billing',
-      optionsList: ['Auto Debit', 'Paypal', 'Cash']
+      optionsList: ['Auto Debit', 'Paypal', 'Cash', 'ApplePay']
     },
     {
       optionTitle: 'Select No of Users',
-      optionsList: [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
+      optionsList: [6, 5, 4, 3, 2, 1]
     }
   ];
 
@@ -130,7 +139,7 @@ const Users = () => {
             <div className="summaryInfoTxt">
               <p className='userSummaryTitle'>{value.title}</p>
               <p className='userSummaryValue'>
-                <b>{value.amount.toLocaleString()}</b>
+                <b style={{color: 'var(--text-color-grayTxts)'}}>{value.amount.toLocaleString()}</b>
                 <span 
                   className={value.increaseDecreaseSpan.includes('+') ? 'positive' : 'negative'}
                 >
@@ -150,7 +159,7 @@ const Users = () => {
       <div className="userBody">
         <div className="filter">
           <div className="searchFilter">
-            <p><b>Search Filter</b></p>
+            <h3><b>Search Filter</b></h3>
           </div>
           <div className="filterOptions">
             <Dropdown options={options} index={0}/>
@@ -190,8 +199,8 @@ const Users = () => {
           
         </div>
 
-        <div className="usersList">
-          {/* Render headers once */}
+        {/* <div className="usersList">
+
           <div className="userListHead">
             {userListHead.map((head, index) => (
               <div 
@@ -203,10 +212,9 @@ const Users = () => {
             ))}
           </div>
 
-          {/* Render user data dynamically */}
           {userData.map((user, index) => (
             <div className="userRow" key={index}>
-              {/* User */}
+
               <div className='userInfo'>
                 <img src={user.userImg} alt="" className='userImg'/>
                 <div className="name">
@@ -215,29 +223,24 @@ const Users = () => {
                 </div>
               </div>
 
-              {/* Role */}
               <div className='roleInfo'>
-                <p><b>{user.roleInfo}</b></p>
+                <p><b>{user.userRole}</b></p>
               </div>
 
-              {/* Title */}
               <div className='titleInfo'>
                 <p>{user.titleInfo}</p>
               </div>
 
-              {/* Billing */}
               <div className='billingInfo'>
-                <p>{user.billingInfo}</p>
+                <p>{user.userBilling}</p>
               </div>
 
-              {/* Status */}
               <div className='statusInfo'>
-                <div className={`userListStatus ${user.statusInfo.toLowerCase()}`}>
-                  {user.statusInfo}
+                <div className={`userListStatus ${user.userStatus.toLowerCase()}`}>
+                  {user.userStatus}
                 </div>
               </div>
 
-              {/* Actions */}
               <div className='actionsInfo'>
                 <div className="userListActions">
                   <i><CiEdit/></i>
@@ -247,8 +250,55 @@ const Users = () => {
               </div>
             </div>
           ))}
-        </div>
+        </div> */}
 
+
+        <div className="usersContainer">
+          <div className="usersHead">
+            <h2 className='h2'>Users</h2>
+            <input type="text" placeholder="Search" />
+          </div>
+          <table>
+            <thead>
+              <tr>
+                <th>USER</th>
+                <th>EMAIL</th>
+                <th>ROLE</th>
+                <th>BILLING</th>
+                <th>STATUS</th>
+                <th>ACTIONS</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              {userData.map((user) => (
+                <tr key={user.userId}>
+                  <td className="receiver">
+                    <input type="checkbox" />
+                    <img src={user.userImg} alt={user.username} />
+                    <span>{user.username}</span>
+                  </td>
+                  <td>{user.userEmail}</td>
+                  <td>{user.userRole}</td>
+                  <td>{user.userBilling}</td>
+                  <td>
+                    <span className={`userListStatus ${user.userStatus.toLowerCase()}`}>
+                      {user.userStatus}
+                    </span>
+                  </td>
+                  <td>
+                    <div className="userListActions">
+                      <i className='edit'><CiEdit/></i>
+                      <i className='trash'><GoTrash/></i>
+                      <i className='save'><FiSave/></i>
+                      {/* <i><PiDotsThreeOutlineVerticalFill/></i> */}
+                    </div>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
 
       </div>
     </div>

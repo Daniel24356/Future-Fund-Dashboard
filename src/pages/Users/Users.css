@@ -1,5 +1,5 @@
 .users{
-    background-color: #2b14dd09;
+    background-color: var(--background-color-pages);
     width: 1064px;
     height: 200vh;
     display: flex;
@@ -20,11 +20,11 @@
 }
 
 .breadcrumbs p{
-    color: rgb(108, 108, 108);
+    color: gray;
 }
 
 .activeCrumb{
-    color: black;
+    color: var(--text-color-grayTxts);
 }
 
 
@@ -40,7 +40,7 @@
 .summaryInfo{
     width: 25%;
     height: 100%;
-    background-color: white;
+    background-color: var(--background-color-elements);
     border-radius: 5px;
     box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.221);
     display: flex;
@@ -76,7 +76,7 @@
 }
 
 .userSummaryTitle{
-    color: rgb(108, 108, 108);
+    color: gray;
     font-size: 13px;
     margin-top: 0;
     margin-bottom: 0;
@@ -95,7 +95,7 @@
 
 /* USER BODY SECTION */
 .userBody{
-    background-color: white;
+    background-color: var(--background-color-elements);
     width: 95%;
     height: 600px;
     display: flex;
@@ -107,11 +107,12 @@
 .filter{
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
-    background-color: white;
+    /* background-color: white; */
     height: 90px;
     width: 100%;
     display: flex;
     flex-direction: column;
+    padding-top: 10px;
 }
 .searchFilter{
     width: 80%;
@@ -131,7 +132,7 @@
 .filter2{
     border-top: 1px solid #e3e3e3;
     border-bottom: 1px solid #e3e3e3;
-    background-color: white;
+    /* background-color: white; */
     height: 80px;
     width: 96%;
     display: flex;
@@ -377,14 +378,124 @@
 
 
 
-.usersListBox{
+
+
+/* USERS TABLE */
+.usersContainer {
+    /* grid-column: 1 / span 3; */
+    width: 100%;
+    height: 500px;
+    /* grid-row: 3; */
+    margin: auto;
+    /* background-color: #1ebc89; */
+    /* height: fit-content; */
+    /* background: white; */
+    /* padding: 20px; */
+    /* box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, 0.2221); */
+  }
+  
+  .usersHead{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* margin-bottom: 10px; */
+    height: 50px;
+    padding-left: 20px;
+    padding-right: 20px;
+    /* background-color: #1ebc89; */
+  }
+  
+  .usersHead input {
+    padding: 8px;
+    width: 200px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    height: 20px;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  thead {
+    /* background: #f8f9fa; */
+    text-align: left;
+  }
+  
+  th, td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .receiver {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .receiver img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+  }
+  
+  .userListStatus {
+    padding: 5px;
+    width: 70px;
+    border-radius: 5px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+  }
+  .details-btn {
+    padding: 5px 10px;
+    border: 1px solid #ddd;
+    background: #f8f9fa;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .details-btn:hover {
+    background: #ddd;
+  }
+  .userListStatus.active {
+    color: #4CAF50;
+    background-color: #e8f5e9;
+} 
+.userListStatus.inactive {
+    color: #646464;
+    background-color: #bebebe;
+}
+
+
+
+.userListActions{
+    /* background-color: palevioletred; */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 30px;
+}
+.userListActions i{
+    font-size: 20px;
+}
+
+
+
+
+
+
+/* .usersListBox{
     width: 100%;
     height: 80px;
     display: grid;
-    grid-template-columns: 2fr 2fr 2fr 2fr 2fr 2fr; /* 3 columns: First two are equal, third is smaller */
-    grid-template-rows: 1fr 1fr 1fr; /* 3 equal rows */
-    /* gap: 10px; */
-    /* background-color: coral; */
+    grid-template-columns: 2fr 2fr 2fr 2fr 2fr 2fr;
+    grid-template-rows: 1fr 1fr 1fr;
     border-top: 1px solid #e3e3e3;
     border-bottom: 1px solid #e3e3e3;
     display: flex;
@@ -395,7 +506,6 @@
 .userRole{
     grid-column: 2;
     grid-row: 1;
-    /* background-color: rgb(186, 238, 130); */
     height: 100%;
     display: flex;
     align-items: center;
@@ -411,77 +521,4 @@
     grid-column: 4;
     grid-row: 1;
 }
-
-/* .userListStatus.active {
-    color: #4CAF50;
-    background-color: #a6ffa9;
-  }
-  
-  .userListStatus.pending {
-    color: #FFC107;
-    background-color: #ffefbb;
-  }
-  
-  .userListStatus.inactive {
-    color: #F44336;
-    background-color: #ffd0d7;
-  } */
-
-  .userListStatus.active {
-    color: #4CAF50;
-    background-color: #e8f5e9;
-  }
-  
-  /* .userListStatus.active:hover {
-    background-color: #4CAF50;
-    color: #ffffff;
-  } */
-  
- 
-  .userListStatus.pending {
-    color: #ffb300;
-    background-color: #fff3cd;
-  }
-  
-  /* .userListStatus.pending:hover {
-    background-color: #FFC107;
-    color: #ffffff;
-  } */
-  
-  
-  .userListStatus.inactive {
-    color: #646464;
-    background-color: #bebebe;
-  }
-  
-  /* .userListStatus.inactive:hover {
-    background-color: #363636;
-    color: #ffffff;
-  } */
-
-.userListStatus{
-    width: 80px;
-    height: 50%;
-    /* background-color: #4caf5026; */
-    grid-column: 5;
-    grid-row: 1;
-    display: flex;
-    /* align-items: center; */
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    border-radius: 10px;
-}
-
-
-.userListActions{
-    /* background-color: palevioletred; */
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-.userListActions i{
-    font-size: 20px;
-}
+ */

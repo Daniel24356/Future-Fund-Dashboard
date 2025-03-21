@@ -52,7 +52,7 @@ const SemiCircularProgressBar = ({ value }) => {
         transform: 'translate(-50%, -70%)',
         fontSize: '20px',
         fontWeight: 'bold',
-        color: '#000',
+        color: "var(--background-color-grayTxts)"
       }}>
         {Math.round(progress)}%
       </div>

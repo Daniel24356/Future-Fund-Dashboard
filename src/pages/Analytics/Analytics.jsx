@@ -14,6 +14,9 @@ import ProfitLineChart from '../../components/ProfitLineChart';
 import EarningBarChart from '../../components/EarningBarChart';
 import Button from '../../components/Button';
 import Dropdown from '../../components/Dropdown/Dropdown';
+import anya from '../../assets/anya.jpg'
+import Adam from '../../assets/Adam.jpg'
+import chibi from '../../assets/chibi.jpg'
 
 const Analytics = () => {
 
@@ -95,30 +98,69 @@ const Analytics = () => {
     },
   ])
 
-  const [transactionState] = useState([
+  const [invoiceState] = useState([
     {
-      "transIcon": <FaCheck />,
-      "transName": "Approved",
-      "transAmount": "3.1k",
+      "invoiceStateIcon": <FaCheck />,
+      "invoiceStateName": "Approved",
+      "invoiceStateAmount": "3.1k",
       color: '#4CAF50',
       bgColor: '#4caf5026'
     },
     {
-      "transIcon":  <IoWarningOutline />,
-      "transName": "Pending",
-      "transAmount": "11.7k",
+      "invoiceStateIcon":  <IoWarningOutline />,
+      "invoiceStateName": "Pending",
+      "invoiceStateAmount": "11.7k",
       color: '#FFC107',
       bgColor: '#ffc10726'
     },
     {
-      "transIcon": <TbCancel />,
-      "transName": "Cancelled",
-      "transAmount": "14",
+      "invoiceStateIcon": <TbCancel />,
+      "invoiceStateName": "Cancelled",
+      "invoiceStateAmount": "14",
       color: '#F44336',
       bgColor: '#f443361f'
       
     }
   ])
+
+  const invoices = [
+    {
+      id: 1,
+      name: "Emma Ryan Jr.",
+      type: "Electricity",
+      status: "Issued",
+      date: "Mar 19th, 2025",
+      amount: "₦3,892",
+      img: "https://randomuser.me/api/portraits/men/32.jpg",
+    },
+    {
+      id: 2,
+      name: "Anya Forger",
+      type: "Data",
+      status: "Issued",
+      date: "Feb 18th, 2025",
+      amount: "₦1,073",
+      img: anya,
+    },
+    {
+      id: 3,
+      name: "Zoe Woods",
+      type: "Airtime",
+      status: "Pending",
+      date: "Feb 2nd, 2025",
+      amount: "₦2,790",
+      img: chibi,
+    },
+    {
+      id: 4,
+      name: "Adam Smasher",
+      type: "Contribution",
+      status: "Issued",
+      date: "Jan 7th, 2025",
+      amount: "₦4,130",
+      img: Adam,
+    }
+  ];
 
   const options = [
     {
@@ -130,8 +172,6 @@ const Analytics = () => {
       optionsList: ['Approved', 'Cancelled', 'Pending']
     }
   ];
-
-  const invoiceHead = ['ID', 'STATUS', 'TOTAL', 'ISSUED DATE', 'ACTIONS'];
 
   const [invoiceData] = useState([
       {
@@ -170,8 +210,8 @@ const Analytics = () => {
           <div className="highestBorrowerTxtBox">
 
             <div className="highestBorrowerTxt" id='highestBorrowerTxt1'>
-              <p><b>Congratulations Adrian <span style={{fontSize: "23px"}}>🎉</span></b></p>
-              <p>Top Borrower of the month</p>
+              <h3 className='congrats'><b>Congratulations Adrian <span style={{fontSize: "23px"}}>🎉</span></b></h3>
+              <p className='borrower'>Top Borrower of the month</p>
             </div>
 
             <div className="highestBorrowerTxt" id='highestBorrowerTxt2'>
@@ -196,7 +236,7 @@ const Analytics = () => {
         
         <div className="stats">
             <div className="statsHead">
-              <p><b>Statistics</b></p>
+              <h3 className='statsHeadTitle'><b>Statistics</b></h3>
               <p className='update'>Updated 1 month ago</p>
             </div>
             <div className="statsBody">
@@ -216,25 +256,24 @@ const Analytics = () => {
         </div>
         
         <div className="semiCircularBar">
-          <p className='loanAmount'>
-            <b>82.5k</b>
-            <br />
-            Loans
-          </p>
-          <SemiCircularProgressBar value={78}/>
-          <p className='loanAmount'>46.3k more than last month</p>
+          <div className="loanAmount1">
+            <h3>82.5k</h3>
+            <p style={{color: 'gray'}}>Loans</p>
+          </div>
+          <SemiCircularProgressBar value={47}/>
+          <p className='loanAmount2'>46.3k less than last month</p>
         </div>
         
         <div className="profit">
-          <p className='profitTxt'>
-            <b>Profit</b>
-            <br />
-            Last Month
-          </p>
+          <div className="profitTxt">
+            <h3>Profit</h3>
+            <p style={{color: 'gray'}}>Last Month</p>
+          </div>
+
           <ProfitLineChart/>
 
           <div className="profitSummary">
-            <p><b>624k</b></p>
+            <p className='profitSummaryValue'><b>624k</b></p>
             <p style={{color: "#52c41a"}}>+8.24%</p>
           </div>
           
@@ -243,8 +282,8 @@ const Analytics = () => {
         <div className="earningReports">
 
           <div className="earningReportsHead">
-            <p><b>Earning Reports</b></p>
-            <p style={{color: "rgb(108, 108, 108)"}}>Monthly Earnings Overview</p>
+            <h3><b>Earning Reports</b></h3>
+            <p style={{color: "gray"}}>Monthly Earnings Overview</p>
           </div>
           
 
@@ -252,7 +291,7 @@ const Analytics = () => {
             {earningReports.map((reports, key) => (
               <div className="earningReportsIcon" key={key}>
                 <i>{reports.earningIcon}</i>
-                <p><b>{reports.earningName}</b></p>
+                <p className='earningName'><b>{reports.earningName}</b></p>
               </div>
             ))}
           </div>
@@ -262,8 +301,8 @@ const Analytics = () => {
 
         <div className="sourceVisits">
           <div className="sourceHead">
-            <p><b>Source Visits</b></p>
-            <p style={{color: "rgb(108, 108, 108)"}}>38.4k Visitors</p>
+            <h3 className='sourceHeadTitle'><b>Source Visits</b></h3>
+            <p style={{color: "gray"}}>38.4k Visitors</p>
           </div>
           
           <div className="sourceBody">
@@ -271,40 +310,40 @@ const Analytics = () => {
               <div className="source" key={key}>
                 <i className='sourceIcon'>{source.sourceIcon}</i>
                 <div className="sourceTxt">
-                  <p><b>{source.sourceName}</b></p>
-                  <p style={{color: "rgb(108, 108, 108)", fontSize: "13px"}}>
+                  <p className='sourceName'><b>{source.sourceName}</b></p>
+                  <p style={{color: "gray", fontSize: "13px"}}>
                     {source.sourceName2}
                   </p>
                 </div>
-                <p>{source.sourceAmount}</p>
+                <p className='sourceAmount'>{source.sourceAmount}</p>
               </div>
             ))}
           </div>
           
         </div>
 
-        <div className="transactions">
-          <div className="transactionHead">
-              <p><b>Transactions</b></p>
-              <p style={{color: "rgb(108, 108, 108)"}}>
-                31.4k transactions last month
+        <div className="invoiceStates">
+          <div className="invoiceStateHead">
+              <h3><b>Invoices</b></h3>
+              <p style={{color: "gray"}}>
+                31.4k invoices last month
               </p>
             </div>
             
-            <div className="transactionBody">
-              {transactionState.map((state, key) => (
-                <div className="transaction" key={key}>
+            <div className="invoiceStateBody">
+              {invoiceState.map((state, key) => (
+                <div className="invoiceState" key={key}>
                   <i 
-                    className='transactionIcon'
+                    className='invoiceStateIcon'
                     style={{
                       color: state.color,
                       backgroundColor: state.bgColor
                     }}
                   >
-                    {state.transIcon}
+                    {state.invoiceStateIcon}
                   </i>
-                  <p style={{color: state.color}}><b>{state.transName}</b></p>
-                  <p>{state.transAmount}</p>
+                  <p style={{color: state.color}}><b>{state.invoiceStateName}</b></p>
+                  <p className='invoiceAmount'>{state.invoiceStateAmount}</p>
                 </div>
               ))}
             </div>
@@ -336,51 +375,46 @@ const Analytics = () => {
             </div>
           </div>
 
-          <div className="invoiceList">
-            <div className="invoiceHead">
-              {invoiceHead.map((head, index) => (
-                <div 
-                  key={index} 
-                  // className={`userListHeadItem ${index === 0 ? 'firstHeadItem' : ''}`}
-                >
-                  <p><b>{head}</b></p>
-                </div>
-              ))}
-            </div>
-
-            {invoiceData.map((invoice, index) => (
-              <div className="invoiceRow" key={index}>
-               
-               <div className='ID'>
-                  <p><b>{invoice.invoiceID}</b></p>
-                </div>
-
-                {/* Role */}
-                <div className='invoiceStatus'>
-                  <i style={{color: invoice.color, backgroundColor: invoice.bgColor}}>{invoice.invoiceStatus}</i>
-                </div>
-
-                <div className='invoiceTotal'>
-                  <p>{`₦${invoice.invoiceTotal.toLocaleString()}`}</p>
-                </div>
-
-                <div className='issuedDate'>
-                  <p>{invoice.issuedDate}</p>
-                </div>
-
-              
-                {/* Actions */}
-                <div className='actionsInfo'>
-                  <div className="userListActions">
-                    <i><IoMailOpenOutline/></i>
-                    <i><FaRegEye/></i>
-                    <i><PiDotsThreeOutlineVerticalFill/></i>
-                  </div>
-                </div>
-              </div>
-            ))}
-            {/* </div> */}
+          <div className="invoiceContainer">
+          <div className="invoiceHead">
+            <h2 className='h2'>Invoice</h2>
+            <input type="text" placeholder="Search" />
           </div>
+          <table>
+            <thead>
+              <tr>
+                <th>USER</th>
+                <th>TYPE</th>
+                <th>STATUS</th>
+                <th>ISSUED DATE</th>
+                <th>AMOUNT</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              {invoices.map((invoice) => (
+                <tr key={invoice.id}>
+                  <td className="receiver">
+                    <input type="checkbox" />
+                    <img src={invoice.img} alt={invoice.name} />
+                    <span>{invoice.name}</span>
+                  </td>
+                  <td>{invoice.type}</td>
+                  <td>
+                    <span className={`status ${invoice.status.toLowerCase()}`}>
+                      {invoice.status}
+                    </span>
+                  </td>
+                  <td>{invoice.date}</td>
+                  <td className="amount11">{invoice.amount}</td>
+                  <td>
+                    <button className="details-btn">Details</button>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
           
         </div>
       </div>

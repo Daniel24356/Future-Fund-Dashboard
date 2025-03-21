@@ -1,18 +1,17 @@
 select {
-    width: 300px;
-    padding: 8px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    cursor: pointer;
-    outline: none;
-  }
-  
-  select:focus {
-    border-color: #2C14DD;
-  }
-  
-  p {
-    margin-top: 10px;
-    color: #333;
-  }
-  
+  width: 300px;
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  outline: none;
+}
+
+select:focus {
+  border-color: #2C14DD;
+}
+
+p {
+  margin-top: 10px;
+  color: #333;
+}

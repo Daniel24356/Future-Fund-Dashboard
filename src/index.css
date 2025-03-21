@@ -1,0 +1,40 @@
+/* index.css */
+
+/* Light Mode */
+:root {
+    --background-color-pages: #2b14dd09;
+    --background-color-elements: #ffffff;
+    --background-color-sideNav: #ffffff;
+    --text-color-grayTxts: #000000;
+    --text-color: #000000;
+    --color-sideNavLinks: #2b14dd3d;
+    --barChart-color: rgba(43, 20, 221, 0.61);
+    --icon-color:  #2C14DD;
+    --iconBg-color: #2b14dd4e;
+    --btnHover-bgColor: #180892;
+  }
+  
+  /* Dark Mode */
+  .dark {
+    --background-color: #121212cf;
+    --background-color-pages: #2b14dd1a;
+    --background-color-elements: #00000063;
+    --background-color-sideNav: #24222f;
+    /* #c */
+    --text-color: #ffffff;
+    --text-color-grayTxts: #ffffff;
+    --color-sideNavLinks: #ffffff;
+    --icon-color: #8879ff;
+    --iconBg-color: #8979ff46;
+    --btnHover-bgColor: #3a317f;
+  }
+
+  
+  /* Apply theme to the whole body */
+  body {
+    background-color: var(--background-color);
+    /* backgroundColor: var(--barChart-color); */
+    color: var(--text-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
