@@ -23,6 +23,7 @@ const Users = () => {
 
   const [selectedExportOption, setSelectedExportOption] = useState('');
   const [users, setUsers] = useState([]);
+  const [deleting, setDeleting] = useState(null);
 
   const exportOptions = ['Png', 'Jpg', 'Pdf'];
 
@@ -155,6 +156,26 @@ const Users = () => {
 
     getUsers();
   },{});
+
+  const handleDelete = async (id)=>{
+    setDeleting(id);
+    try {
+      const token = localStorage.getItem("FFToken");
+      if(token){
+        axios.delete(`${BASE_URL}/api/v1/users/${id}`, {headers: { Authorization: `Bearer ${token}`}})
+        .then(()=>{
+          const filteredUsers = users.filter((user)=> user.id !== id)
+          setUsers(filteredUsers);
+          setDeleting(null);
+        })
+      }
+
+    } catch (error) {
+      setDeleting(null);
+      console.error(error);
+      
+    }
+  };
 
 
 
@@ -321,9 +342,20 @@ const Users = () => {
                   </td>
                   <td>
                     <div className="userListActions">
-                      <i className='edit'><CiEdit/></i>
-                      <i className='trash'><GoTrash/></i>
-                      <i className='save'><FiSave/></i>
+                      <div className="action-div"> <CiEdit/> </div>
+                      <div className="action-div" onClick={()=>handleDelete(user.id)}>
+                        {
+                          deleting === user.id?
+                          <div class="loader">
+                            <span class="bar"></span>
+                            <span class="bar"></span>
+                            <span class="bar"></span>
+                          </div> :
+                          <GoTrash/> 
+                        } 
+                      </div>
+                      <div className="action-div"> <FiSave/> </div>
+                      
                       {/* <i><PiDotsThreeOutlineVerticalFill/></i> */}
                     </div>
                   </td>

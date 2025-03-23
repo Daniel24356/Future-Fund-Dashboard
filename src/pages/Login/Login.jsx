@@ -21,18 +21,20 @@ const Login = () => {
   // State to store input values
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [loggingIn, setLoggingIn] = useState(false);
 
   // Function to handle Sign In button click
   const handleSignIn = async(e) => {
     e.preventDefault();
-
-      if(email === "" || password === "") {
-        toast.error('All fields must be filled', {
-          position: "top-right",
-          autoClose: 2000,
-          theme: "dark",
-        });
-      }else{
+    
+    if(email === "" || password === "") {
+      toast.error('All fields must be filled', {
+        position: "top-right",
+        autoClose: 2000,
+        theme: "dark",
+      });
+    }else{
+        setLoggingIn(true);
         try {
           await axios.post(`${BASE_URL}/api/v1/login`, {email, password})
           .then((response)=>{
@@ -53,6 +55,7 @@ const Login = () => {
                 autoClose: 2000,
                 theme: "dark",
               });
+              setLoggingIn(false);
             }
           })
           
@@ -62,7 +65,7 @@ const Login = () => {
             autoClose: 2000,
             theme: "dark",
           });
-          
+          setLoggingIn(false);
         }
       }
 
@@ -136,9 +139,19 @@ const Login = () => {
 
           {/* Sign In Button */}
           <div className="s">
-            <button type="submit" className="signInBtn">
-              Log In
-            </button>
+            {
+              loggingIn?
+              <div className="loading">
+                <div class="loader">
+                  <span class="bar"></span>
+                  <span class="bar"></span>
+                  <span class="bar"></span>
+                </div>
+              </div> :
+              <button type="submit" className="signInBtn">
+                Log In
+              </button>
+            }
           </div>
         </form>
       </div>

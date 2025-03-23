@@ -166,3 +166,15 @@ color: black;
   font-size: 14px;
   margin: 5px 0;
 }
+
+.loading {
+  background-color: #151717;
+  border: none;
+  border-radius: 10px;
+  height: 100%;
+  width: 60%;
+  cursor: not-allowed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
