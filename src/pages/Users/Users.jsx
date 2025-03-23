@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Header from '../../components/Header/Header';
 import './Users.css';
 // import { FaPlus } from "react-icons/fa";
@@ -14,10 +14,15 @@ import anya from '../../assets/anya.jpg'
 import Adam from '../../assets/Adam.jpg'
 import chibi from '../../assets/chibi.jpg'
 import adrian from '../../assets/ai-avatar.webp'
+import axios from 'axios';
+import { BASE_URL } from '../../App';
+import { toast } from 'react-toastify';
+import noImg from "../../assets/anya.jpg"
 
 const Users = () => {
 
   const [selectedExportOption, setSelectedExportOption] = useState('');
+  const [users, setUsers] = useState([]);
 
   const exportOptions = ['Png', 'Jpg', 'Pdf'];
 
@@ -124,6 +129,34 @@ const Users = () => {
       optionsList: [6, 5, 4, 3, 2, 1]
     }
   ];
+
+
+  useEffect(()=>{
+    const getUsers = async ()=>{
+      const token = localStorage.getItem("FFToken");
+      if(token){
+        await axios.get(
+          `${BASE_URL}/api/v1/users`,
+          {
+            headers: { Authorization: `Bearer ${token}` },
+          }
+        )
+        .then((response)=>{
+          setUsers(response.data);
+        })
+      }else{
+        toast.error('Error loading users', {
+          position: "top-right",
+          autoClose: 2000,
+          theme: "dark",
+        });
+      }
+    }
+
+    getUsers();
+  },{});
+
+
 
   return (
     <div className='users'>
@@ -264,26 +297,26 @@ const Users = () => {
                 <th>USER</th>
                 <th>EMAIL</th>
                 <th>ROLE</th>
-                <th>BILLING</th>
-                <th>STATUS</th>
+                <th>C. SCORE</th>
+                <th>BALANCE</th>
                 <th>ACTIONS</th>
                 <th></th>
               </tr>
             </thead>
             <tbody>
-              {userData.map((user) => (
-                <tr key={user.userId}>
+              {users.map((user) => (
+                <tr key={user.id}>
                   <td className="receiver">
                     <input type="checkbox" />
-                    <img src={user.userImg} alt={user.username} />
-                    <span>{user.username}</span>
+                    <img src={user.profilePicture || noImg} />
+                    <span>{user.firstName}</span>
                   </td>
-                  <td>{user.userEmail}</td>
-                  <td>{user.userRole}</td>
-                  <td>{user.userBilling}</td>
+                  <td>{user.email}</td>
+                  <td>{user.role}</td>
+                  <td>{user.creditScore}</td>
                   <td>
-                    <span className={`userListStatus ${user.userStatus.toLowerCase()}`}>
-                      {user.userStatus}
+                    <span className={`userListStatus`}>
+                      {user.balance}
                     </span>
                   </td>
                   <td>

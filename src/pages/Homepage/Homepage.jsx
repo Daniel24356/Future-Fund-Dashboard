@@ -35,6 +35,9 @@ import webAnalytics from '../../assets/webAnalytics.png'
 import { FiUsers, FiDollarSign, FiPhoneCall, FiWifi, FiExternalLink } from "react-icons/fi";
 import { BsMailboxFlag } from "react-icons/bs";
 import { IoChatboxEllipsesOutline, IoMegaphoneOutline, IoWarningOutline , IoMailOpenOutline} from "react-icons/io5";
+import { BASE_URL } from "../../App";
+import { toast } from "react-toastify";
+import axios from "axios";
 
 ChartJS.register(CategoryScale, LinearScale, BarElement, ArcElement, Title, Tooltip, Legend);
 
@@ -234,6 +237,7 @@ const Homepage = () => {
   //   },
   //   plugins: { legend: { display: false } },
   // };
+
 
 
 

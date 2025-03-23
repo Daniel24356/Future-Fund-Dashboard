@@ -7,42 +7,86 @@ import { useNavigate } from 'react-router-dom';
 import { IoKeySharp } from "react-icons/io5";
 import { FaUserSecret } from "react-icons/fa";
 import formLogo from '../../assets/FF3.png'
+import axios from 'axios';
+import { BASE_URL } from '../../App';
+import { jwtDecode } from 'jwt-decode';
 
 const Login = () => {
   const navigate = useNavigate();
 
   // Define the correct username and password
-  const ADMIN_USERNAME = "admin";
-  const ADMIN_PASSWORD = "futurefund";
+  // const ADMIN_USERNAME = "admin";
+  // const ADMIN_PASSWORD = "futurefund";
 
   // State to store input values
-  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   // Function to handle Sign In button click
-  const handleSignIn = (e) => {
+  const handleSignIn = async(e) => {
     e.preventDefault();
 
-    if (username === ADMIN_USERNAME && password === ADMIN_PASSWORD) {
-      // Success notification
-      toast.success('Welcome ADMIN', {
-        position: "top-right",
-        autoClose: 2000,
-        theme: "dark",
-      });
+      if(email === "" || password === "") {
+        toast.error('All fields must be filled', {
+          position: "top-right",
+          autoClose: 2000,
+          theme: "dark",
+        });
+      }else{
+        try {
+          await axios.post(`${BASE_URL}/api/v1/login`, {email, password})
+          .then((response)=>{
+            const decode = jwtDecode(response.data.accessToken);
+            if(decode.name === "ADMIN"){
+              localStorage.setItem('FFToken', response.data.accessToken);
+              toast.success('Welcome ADMIN', {
+                position: "top-right",
+                autoClose: 2000,
+                theme: "dark",
+              });
+              setTimeout(() => {
+                navigate('/dashboard/Homepage');
+              }, 2000);
+            }else{
+              toast.error('You are not Authorized!', {
+                position: "top-right",
+                autoClose: 2000,
+                theme: "dark",
+              });
+            }
+          })
+          
+        } catch (error) {
+          toast.error("Unauthorized!", {
+            position: "top-right",
+            autoClose: 2000,
+            theme: "dark",
+          });
+          
+        }
+      }
 
-      // Navigate to Dashboard after success
-      setTimeout(() => {
-        navigate('/dashboard/Homepage');
-      }, 2000);
-    } else {
-      // Error notification if username or password is incorrect
-      toast.error('Admin username or password is incorrect', {
-        position: "top-right",
-        autoClose: 2000,
-        theme: "dark",
-      });
-    }
+
+    // if (username === ADMIN_USERNAME && password === ADMIN_PASSWORD) {
+    //   // Success notification
+    //   toast.success('Welcome ADMIN', {
+    //     position: "top-right",
+    //     autoClose: 2000,
+    //     theme: "dark",
+    //   });
+
+    //   // Navigate to Dashboard after success
+    //   setTimeout(() => {
+    //     navigate('/dashboard/Homepage');
+    //   }, 2000);
+    // } else {
+    //   // Error notification if username or password is incorrect
+    //   toast.error('Admin username or password is incorrect', {
+    //     position: "top-right",
+    //     autoClose: 2000,
+    //     theme: "dark",
+    //   });
+    // }
   };
 
   return (
@@ -57,15 +101,15 @@ const Login = () => {
           </div>
           
           <div className="username">
-            <label>Admin Username</label>
+            <label>Admin Email</label>
             <div className="inputForm">
               <i><FaUserSecret /></i>
               <input 
                 type="text"
                 className="loginInput"
-                placeholder="Enter your username"
-                value={username}
-                onChange={(e) => setUsername(e.target.value)}
+                placeholder="Enter your Email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
               />
             </div>
           </div>    
