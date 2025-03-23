@@ -142,6 +142,24 @@
     padding-right: 20px;
 }
 
+.search-filter-input{
+    width: 300px;
+    padding: 8px 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    color: #333;
+    outline: none;
+}
+
+.search-filter-input:focus{
+    animation: filter-border 300ms 1 forwards linear;
+}
+
+@keyframes filter-border {
+    from { border: 1px solid #ccc; }
+    to { border: 2px solid #2C14DD; }
+}
+
 /* .addUserBtn{
     padding: 10px;
     border: 0;

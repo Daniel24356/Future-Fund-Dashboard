@@ -23,7 +23,11 @@ const Users = () => {
 
   const [selectedExportOption, setSelectedExportOption] = useState('');
   const [users, setUsers] = useState([]);
+  const [filteredusers, setfilteredUsers] = useState([]);
   const [deleting, setDeleting] = useState(null);
+  const [fetchingUsers, setFetchingUsers] = useState(false);
+  const [nameSearch, setNameSearch] = useState('');
+  const [emailSearch, setEmailSearch] = useState('');
 
   const exportOptions = ['Png', 'Jpg', 'Pdf'];
 
@@ -134,6 +138,7 @@ const Users = () => {
 
   useEffect(()=>{
     const getUsers = async ()=>{
+      setFetchingUsers(true);
       const token = localStorage.getItem("FFToken");
       if(token){
         await axios.get(
@@ -144,6 +149,7 @@ const Users = () => {
         )
         .then((response)=>{
           setUsers(response.data);
+          setFetchingUsers(false);
         })
       }else{
         toast.error('Error loading users', {
@@ -151,6 +157,7 @@ const Users = () => {
           autoClose: 2000,
           theme: "dark",
         });
+        setFetchingUsers(false);
       }
     }
 
@@ -176,6 +183,25 @@ const Users = () => {
       
     }
   };
+
+  useEffect(()=>{
+    const handleNameSearch = (e)=>{
+      const filteredList = users.filter((user)=> user.firstName.toLowerCase().includes(nameSearch.toLowerCase()) || 
+      user.lastName.toLowerCase().includes(nameSearch.toLowerCase()));
+      setfilteredUsers(filteredList);
+    };
+
+    handleNameSearch();
+  },[nameSearch]);
+
+  useEffect(()=>{
+    const handleEmailSearch = (e)=>{
+      const filteredList = users.filter((user)=> user.email.toLowerCase().includes(emailSearch.toLowerCase()))
+      setfilteredUsers(filteredList);
+    };
+
+    handleEmailSearch();
+  },[emailSearch]);
 
 
 
@@ -216,8 +242,25 @@ const Users = () => {
             <h3><b>Search Filter</b></h3>
           </div>
           <div className="filterOptions">
-            <Dropdown options={options} index={0}/>
-            <Dropdown options={options} index={1}/>
+            <input className='search-filter-input' type="text" placeholder='Search by name' 
+              value={nameSearch}
+              onChange={(e)=> {
+                if(emailSearch.length > 0){
+                  setEmailSearch('');
+                  setNameSearch(e.target.value);
+                }else{ setNameSearch(e.target.value); }
+              }}
+            />
+            <input className='search-filter-input' type="text" placeholder='Search by Email' 
+              value={emailSearch}
+              onChange={(e)=> {
+                if(nameSearch.length > 0){
+                  setNameSearch('');
+                  setEmailSearch(e.target.value);
+                }else{ setEmailSearch(e.target.value); }
+              }}
+            />
+
             <Dropdown options={options} index={2}/>
           </div>
           
@@ -325,42 +368,101 @@ const Users = () => {
               </tr>
             </thead>
             <tbody>
-              {users.map((user) => (
-                <tr key={user.id}>
-                  <td className="receiver">
-                    <input type="checkbox" />
-                    <img src={user.profilePicture || noImg} />
-                    <span>{user.firstName}</span>
-                  </td>
-                  <td>{user.email}</td>
-                  <td>{user.role}</td>
-                  <td>{user.creditScore}</td>
-                  <td>
-                    <span className={`userListStatus`}>
-                      {user.balance}
-                    </span>
-                  </td>
-                  <td>
-                    <div className="userListActions">
-                      <div className="action-div"> <CiEdit/> </div>
-                      <div className="action-div" onClick={()=>handleDelete(user.id)}>
-                        {
-                          deleting === user.id?
-                          <div class="loader">
-                            <span class="bar"></span>
-                            <span class="bar"></span>
-                            <span class="bar"></span>
-                          </div> :
-                          <GoTrash/> 
-                        } 
+              {
+                nameSearch.length > 0 && filteredusers.length > 0 ||
+                emailSearch.length > 0 && filteredusers.length > 0?
+                filteredusers.map((user) => (
+                  <tr key={user.id}>
+                    <td className="receiver">
+                      <input type="checkbox" />
+                      <img src={user.profilePicture || noImg} />
+                      <span>{user.firstName}</span>
+                    </td>
+                    <td>{user.email}</td>
+                    <td>{user.role}</td>
+                    <td>{user.creditScore}</td>
+                    <td>
+                      <span className={`userListStatus`}>
+                        {user.balance}
+                      </span>
+                    </td>
+                    <td>
+                      <div className="userListActions">
+                        <div className="action-div"> <CiEdit/> </div>
+                        <div className="action-div" onClick={()=>handleDelete(user.id)}>
+                          {
+                            deleting === user.id?
+                            <div class="loader">
+                              <span class="bar"></span>
+                              <span class="bar"></span>
+                              <span class="bar"></span>
+                            </div> :
+                            <GoTrash/> 
+                          } 
+                        </div>
+                        <div className="action-div"> <FiSave/> </div>
+                        
+                        {/* <i><PiDotsThreeOutlineVerticalFill/></i> */}
                       </div>
-                      <div className="action-div"> <FiSave/> </div>
-                      
-                      {/* <i><PiDotsThreeOutlineVerticalFill/></i> */}
-                    </div>
+                    </td>
+                  </tr>
+                ))
+                :
+                nameSearch.length > 0 && filteredusers.length === 0 ||
+                emailSearch.length > 0 && filteredusers.length === 0?
+                <tr>
+                  <td colSpan={7}>
+                    <p style={{justifySelf:'center', fontSize:18, color:'red'}}>No user found</p>
                   </td>
                 </tr>
-              ))}
+                :
+                fetchingUsers?
+                <tr>
+                  <td colSpan={7}>
+                  <div class="loader" style={{justifySelf:'center'}}>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                  </div>
+                  </td>
+                </tr> :
+                users.map((user) => (
+                  <tr key={user.id}>
+                    <td className="receiver">
+                      <input type="checkbox" />
+                      <img src={user.profilePicture || noImg} />
+                      <span>{user.firstName}</span>
+                    </td>
+                    <td>{user.email}</td>
+                    <td>{user.role}</td>
+                    <td>{user.creditScore}</td>
+                    <td>
+                      <span className={`userListStatus`}>
+                        {user.balance}
+                      </span>
+                    </td>
+                    <td>
+                      <div className="userListActions">
+                        <div className="action-div"> <CiEdit/> </div>
+                        <div className="action-div" onClick={()=>handleDelete(user.id)}>
+                          {
+                            deleting === user.id?
+                            <div class="loader">
+                              <span class="bar"></span>
+                              <span class="bar"></span>
+                              <span class="bar"></span>
+                            </div> :
+                            <GoTrash/> 
+                          } 
+                        </div>
+                        <div className="action-div"> <FiSave/> </div>
+                        
+                        {/* <i><PiDotsThreeOutlineVerticalFill/></i> */}
+                      </div>
+                    </td>
+                  </tr>
+                ))
+              }
             </tbody>
           </table>
         </div>

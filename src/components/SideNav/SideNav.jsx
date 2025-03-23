@@ -43,6 +43,7 @@ const SideNav = () => {
           });
 
           // Redirect to login page after logging out
+          localStorage.removeItem("FFToken")
           setTimeout(() => {
             navigate('/Login');
           }, 1500);
